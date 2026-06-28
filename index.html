@@ -41,6 +41,18 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer}
 .tsw.on .tkn{left:15px}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
 
+/* IN-APP ALERT BANNER */
+.alert-banner{position:fixed;top:0;left:0;right:0;z-index:500;display:none;align-items:center;gap:11px;padding:14px 16px;background:linear-gradient(135deg,#412402,#5a3208);border-bottom:2px solid var(--gold);box-shadow:0 6px 24px rgba(0,0,0,.5);cursor:pointer;animation:slidedown .35s ease}
+.alert-banner.show{display:flex}
+.alert-banner.hm{background:linear-gradient(135deg,#26215C,#352c7a);border-bottom-color:#7F77DD}
+@keyframes slidedown{from{transform:translateY(-100%)}to{transform:translateY(0)}}
+.alert-ic{font-size:22px;flex-shrink:0;animation:pulse 1.2s infinite}
+.alert-body{flex:1;min-width:0}
+.alert-title{font-size:14px;font-weight:500;color:#fff;line-height:1.3;margin-bottom:2px}
+.alert-desc{font-size:11px;color:var(--gold-light);line-height:1.4}
+.alert-banner.hm .alert-desc{color:#CECBF6}
+.alert-x{font-size:14px;color:var(--muted);flex-shrink:0}
+
 /* NOW CARD */
 .now{margin:12px 16px;background:var(--gold-dark);border:1px solid var(--gold);border-radius:12px;padding:14px;overflow:hidden}
 .now.hm{background:#26215C;border-color:#7F77DD}
@@ -170,35 +182,6 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer}
 .abs-num{background:rgba(29,158,117,0.15);color:#9FE1CB}
 .abs-focus{font-size:10px;color:#9FE1CB;margin-top:1px}
 
-/* BUSINESS TAB */
-.biz-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden}
-.biz-card-hdr{padding:12px 14px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}
-.biz-card-hdr:active{background:var(--bg3)}
-.biz-phase-num{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;flex-shrink:0}
-.biz-card-title{font-size:13px;font-weight:500;color:var(--text)}
-.biz-card-sub{font-size:11px;color:var(--muted);margin-top:2px}
-.biz-now-badge{font-size:9px;font-weight:500;padding:2px 7px;border-radius:10px;background:rgba(226,75,74,0.15);color:#F09595;margin-left:6px;vertical-align:middle}
-.biz-chev{font-size:14px;color:var(--muted);transition:transform .2s;flex-shrink:0}
-.biz-chev.rot{transform:rotate(180deg)}
-.biz-card-body{display:none;padding:0 14px 14px}
-.biz-card-body.open{display:block}
-.biz-warn{background:rgba(239,159,39,0.08);border:1px solid rgba(239,159,39,0.2);border-radius:8px;padding:9px 11px;font-size:12px;color:var(--gold-light);line-height:1.5;margin-bottom:12px}
-.biz-info{background:rgba(55,138,221,0.08);border:1px solid rgba(55,138,221,0.2);border-radius:8px;padding:9px 11px;font-size:12px;color:var(--blue-light);line-height:1.5;margin-bottom:12px}
-.biz-success{background:rgba(29,158,117,0.08);border:1px solid rgba(29,158,117,0.2);border-radius:8px;padding:9px 11px;font-size:12px;color:var(--teal-light);line-height:1.5;margin-bottom:12px}
-.biz-step-list{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
-.biz-step{display:flex;gap:10px;align-items:flex-start;background:var(--bg3);border-radius:8px;padding:10px}
-.biz-step-num{font-size:10px;font-weight:500;color:var(--muted);background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:2px 6px;flex-shrink:0;margin-top:2px;white-space:nowrap}
-.critical-num{background:rgba(226,75,74,0.1);border-color:rgba(226,75,74,0.3);color:#F09595}
-.biz-step-title{font-size:12px;font-weight:500;color:var(--text);margin-bottom:3px}
-.biz-step-desc{font-size:11px;color:var(--muted);line-height:1.5}
-.biz-tag{display:inline-block;font-size:10px;font-weight:500;padding:2px 7px;border-radius:4px;margin-top:5px;background:var(--bg2);color:var(--muted);border:1px solid var(--border)}
-.biz-tag.critical{background:rgba(226,75,74,0.1);color:#F09595;border-color:rgba(226,75,74,0.2)}
-.biz-tag.important{background:rgba(239,159,39,0.1);color:var(--gold-light);border-color:rgba(239,159,39,0.2)}
-.biz-tag.go{background:rgba(29,158,117,0.1);color:var(--teal-light);border-color:rgba(29,158,117,0.2)}
-.biz-checklist-lbl{font-size:10px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
-.biz-check-item{display:flex;align-items:flex-start;gap:7px;font-size:11px;color:var(--muted);line-height:1.5;margin-bottom:5px;padding:6px 8px;background:var(--bg3);border-radius:6px}
-.biz-check-item::before{content:'□';color:var(--teal-light);font-size:12px;flex-shrink:0;margin-top:0px}
-
 /* STUDY TAB */
 .stab{flex:1;padding:6px 2px;font-size:10px;font-weight:500;border:none;background:transparent;color:var(--muted);border-radius:7px;cursor:pointer;transition:all .2s}
 .stab.active{background:var(--bg2);color:var(--teal-light);border:1px solid rgba(29,158,117,0.3)}
@@ -247,6 +230,33 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer}
 .goal-sub{font-size:11px;color:var(--muted);margin-top:1px}
 .goal-body{font-size:12px;color:var(--muted);line-height:1.6}
 
+/* GOAL STREAK */
+.goal-streak-row{display:flex;align-items:center;gap:8px;margin-top:11px;padding-top:11px;border-top:1px solid var(--border)}
+.streak-badge{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:500;font-family:'DM Mono',monospace;padding:5px 10px;border-radius:20px;background:var(--bg3);color:var(--muted);border:1px solid var(--border)}
+.streak-badge.lit{background:rgba(239,159,39,0.12);border-color:rgba(239,159,39,0.4);color:var(--gold-light)}
+.streak-flame{font-size:13px;filter:grayscale(1);opacity:.5}
+.streak-badge.lit .streak-flame{filter:none;opacity:1}
+.streak-best{font-size:10px;color:var(--dim);font-family:'DM Mono',monospace}
+.done-btn{margin-left:auto;font-size:12px;font-weight:500;padding:7px 14px;border-radius:8px;border:1px solid;cursor:pointer;transition:all .15s;-webkit-tap-highlight-color:transparent;white-space:nowrap}
+.done-btn.todo{background:transparent;border-color:rgba(29,158,117,0.4);color:var(--teal-light)}
+.done-btn.todo:active{background:rgba(29,158,117,0.15)}
+.done-btn.done{background:var(--teal);border-color:var(--teal);color:#fff}
+
+/* STATS TABLE */
+.stats-table{width:100%;border-collapse:collapse;background:var(--bg2);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.stats-table thead th{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);text-align:left;padding:10px 12px;background:var(--bg3);border-bottom:1px solid var(--border)}
+.stats-table thead th:last-child,.stats-table tbody td:last-child{text-align:right}
+.stats-table tbody td{font-size:12px;color:var(--text);padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.04);vertical-align:middle}
+.stats-table tbody tr:last-child td{border-bottom:none}
+.stats-table .st-cat{font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--dim)}
+.stats-table .st-metric{color:var(--muted)}
+.stats-table .st-val{font-weight:500;font-family:'DM Mono',monospace;white-space:nowrap}
+.stats-table .grp td{background:var(--bg3);font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:7px 12px}
+.stat-card-row{display:flex;gap:8px}
+.stat-card{flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:11px 8px;text-align:center}
+.stat-card .v{font-size:20px;font-weight:500;color:#fff;line-height:1.1}
+.stat-card .l{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:3px}
+
 .info-box{background:rgba(239,159,39,0.06);border:1px solid rgba(239,159,39,0.15);border-radius:10px;padding:11px 13px;margin-bottom:10px;font-size:12px;color:var(--muted);line-height:1.5}
 .info-box strong{color:var(--gold-light);font-weight:500}
 .green-box{background:rgba(29,158,117,0.06);border:1px solid rgba(29,158,117,0.15);border-radius:10px;padding:10px 12px;margin-bottom:10px;font-size:12px;color:var(--muted);line-height:1.5}
@@ -270,11 +280,25 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer}
   <div class="mode-bar">
     <div class="mbadge wd hidden" id="mwd"><div class="dot"></div>Weekday</div>
     <div class="mbadge hd hidden" id="mhd"><div class="dot"></div><span id="mhdtxt">Sunday</span></div>
+    <label class="htoggle" onclick="toggleNotif()" id="notifToggle">
+      <div class="tsw" id="nsw"><div class="tkn"></div></div>
+      <span id="nlbl">🔔 Alerts off</span>
+    </label>
     <label class="htoggle" onclick="toggleHoliday()">
       <div class="tsw" id="tsw"><div class="tkn"></div></div>
-      <span id="tlbl">Mark as holiday</span>
+      <span id="tlbl">Holiday</span>
     </label>
   </div>
+</div>
+
+<!-- IN-APP ALERT BANNER -->
+<div id="alertBanner" class="alert-banner" onclick="dismissAlert()">
+  <div class="alert-ic">🔔</div>
+  <div class="alert-body">
+    <div class="alert-title" id="alertTitle"></div>
+    <div class="alert-desc" id="alertDesc"></div>
+  </div>
+  <div class="alert-x">✕</div>
 </div>
 
 <!-- NOW CARD -->
@@ -287,33 +311,93 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer}
   <div id="nTag"></div>
 </div>
 
-<!-- Storage setup banner (hidden once configured) -->
-<!-- <div id="storage-banner" style="display:none;margin:0 16px 10px;background:rgba(226,75,74,0.1);border:1px solid rgba(226,75,74,0.3);border-radius:10px;padding:10px 13px;gap:10px;align-items:flex-start;">
-  <div style="font-size:18px;flex-shrink:0;">⚙️</div>
-  <div>
-    <div style="font-size:12px;font-weight:500;color:#F09595;margin-bottom:3px;">Storage not configured — weights save locally only</div>
-    <div style="font-size:11px;color:rgba(240,149,149,0.8);line-height:1.5;">To save weights across devices: go to <strong style="color:#fff;">jsonbin.io</strong> → sign up free → create a bin → paste the Bin ID and Access Key into the two variables at the top of the JS. Takes 2 minutes.</div>
-  </div>
-</div> -->
-
 <!-- TABS -->
 <div class="tabs">
   <button class="tab active" onclick="showTab('today')" id="tab-today">Today</button>
-  <button class="tab" onclick="showTab('workout')" id="tab-workout">Workout</button>
+  <button class="tab" onclick="showTab('workout')" id="tab-workout">Fitness</button>
   <button class="tab" onclick="showTab('study')" id="tab-study">Study</button>
-  <button class="tab" onclick="showTab('biz')" id="tab-biz">Business</button>
   <button class="tab" onclick="showTab('weekday')" id="tab-weekday">Schedule</button>
   <button class="tab" onclick="showTab('goals')" id="tab-goals">Goals</button>
+  <button class="tab" onclick="showTab('stats')" id="tab-stats">Stats</button>
 </div>
 
 <div class="wrap">
 
 <!-- ═══ TODAY TAB ═══ -->
-<div id="view-today"><div id="today-container"></div></div>
+<div id="view-today">
+  <!-- Reminders setup card -->
+  <div style="background:rgba(239,159,39,0.07);border:1px solid rgba(239,159,39,0.2);border-radius:10px;padding:11px 13px;margin-bottom:12px;">
+    <div style="font-size:11px;font-weight:500;color:var(--gold-light);margin-bottom:6px;display:flex;align-items:center;gap:6px;">🔔 Stay on track — reminders</div>
+    <div style="font-size:11px;color:var(--muted);line-height:1.5;margin-bottom:9px;">
+      <strong style="color:var(--text);font-weight:500;">In-app alerts:</strong> tap the bell in the header — you'll get a banner + sound when each block begins (while this app is open).<br>
+      <strong style="color:var(--text);font-weight:500;">Lock-screen reminders:</strong> add the schedule to your iPhone Calendar once — then iOS alerts you even when the app is closed.
+    </div>
+    <button onclick="downloadICS()" style="width:100%;padding:10px;background:rgba(239,159,39,0.12);border:1px solid rgba(239,159,39,0.35);color:var(--gold-light);border-radius:8px;font-size:12px;font-weight:500;">📅 Add schedule to iPhone Calendar</button>
+    <div style="font-size:10px;color:var(--dim);line-height:1.5;margin-top:7px;">On iPhone: tap the button → "Subscribe"/"Add All" when the calendar file opens. Each block becomes a daily reminder with an alert at its start time. Weekday blocks repeat Mon–Sat; weekend blocks repeat Sunday.</div>
+  </div>
+
+  <!-- Cloud sync (Supabase) card -->
+  <div style="background:rgba(55,138,221,0.06);border:1px solid rgba(55,138,221,0.2);border-radius:10px;padding:11px 13px;margin-bottom:12px;">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+      <div style="font-size:11px;font-weight:500;color:var(--blue-light);display:flex;align-items:center;gap:6px;">☁️ Cloud sync</div>
+      <span id="sync-status" style="margin-left:auto;font-size:10px;font-weight:500;padding:2px 8px;border-radius:20px;background:var(--bg3);color:var(--muted);">…</span>
+    </div>
+    <div id="sync-desc" style="font-size:11px;color:var(--muted);line-height:1.5;margin-bottom:9px;"></div>
+    <button id="sync-toggle-btn" onclick="toggleSyncForm()" style="width:100%;padding:10px;background:rgba(55,138,221,0.12);border:1px solid rgba(55,138,221,0.35);color:var(--blue-light);border-radius:8px;font-size:12px;font-weight:500;">Connect a database</button>
+    <!-- connect form (hidden until tapped) -->
+    <div id="sync-form" class="hidden" style="margin-top:10px;">
+      <div style="font-size:10px;color:var(--dim);line-height:1.6;margin-bottom:9px;">
+        Free, ~10 min, one-time. <strong style="color:var(--text);">1.</strong> Create a project at <strong style="color:var(--blue-light);">supabase.com</strong>. <strong style="color:var(--text);">2.</strong> In the SQL editor, run the setup snippet (tap “Show SQL” below). <strong style="color:var(--text);">3.</strong> In Project Settings → API, copy your <em>Project URL</em> and <em>anon public</em> key and paste them here.
+      </div>
+      <input type="text" id="sb-url" placeholder="https://xxxxx.supabase.co" style="width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:8px;font-family:'DM Mono',monospace;font-size:11px;margin-bottom:7px;outline:none;">
+      <input type="text" id="sb-key" placeholder="anon public key (eyJhbGc…)" style="width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:8px;font-family:'DM Mono',monospace;font-size:11px;margin-bottom:9px;outline:none;">
+      <button onclick="connectSync()" style="width:100%;padding:10px;background:rgba(29,158,117,0.15);border:1px solid rgba(29,158,117,0.4);color:var(--teal-light);border-radius:8px;font-size:12px;font-weight:500;">Connect &amp; sync now</button>
+      <button onclick="showSqlHelp()" style="width:100%;padding:8px;background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:8px;font-size:11px;margin-top:7px;">Show SQL setup snippet</button>
+      <pre id="sql-help" class="hidden" style="white-space:pre-wrap;word-break:break-word;background:#0b0b0a;border:1px solid var(--border);border-radius:8px;padding:10px;font-size:10px;color:var(--teal-light);line-height:1.5;margin-top:8px;font-family:'DM Mono',monospace;"></pre>
+    </div>
+    <button id="sync-disconnect" onclick="disconnectSync()" class="hidden" style="width:100%;padding:8px;background:transparent;border:1px solid rgba(226,75,74,0.3);color:#F09595;border-radius:8px;font-size:11px;margin-top:7px;">Disconnect this device</button>
+  </div>
+
+  <div id="today-container"></div>
+</div>
 
 <!-- ═══ WORKOUT TAB ═══ -->
 <div id="view-workout" class="hidden">
 
+<!-- Phase banner (auto: Phase 1 = days 1–7, Phase 2 = day 8+) -->
+<div id="fit-phase-banner" style="margin-bottom:12px;"></div>
+
+<!-- PHASE 2 macro targets header (74 kg vegetarian, fat-loss) -->
+<div id="fit-p2-macros" style="background:linear-gradient(135deg,#04342C,#412402);border-radius:12px;padding:14px;margin-bottom:12px;position:relative;overflow:hidden;">
+  <div style="font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-light);margin-bottom:5px;">Your fat-loss targets · 74 kg · 5'7" · vegetarian</div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px;">
+    <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:8px 6px;text-align:center;"><div style="font-size:16px;font-weight:500;color:#fff;">1650</div><div style="font-size:9px;color:var(--muted);">calories</div></div>
+    <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:8px 6px;text-align:center;"><div style="font-size:16px;font-weight:500;color:var(--teal-light);">148g</div><div style="font-size:9px;color:var(--muted);">protein</div></div>
+    <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:8px 6px;text-align:center;"><div style="font-size:16px;font-weight:500;color:var(--gold-light);">67g</div><div style="font-size:9px;color:var(--muted);">fat</div></div>
+    <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:8px 6px;text-align:center;"><div style="font-size:16px;font-weight:500;color:var(--blue-light);">114g</div><div style="font-size:9px;color:var(--muted);">carbs</div></div>
+  </div>
+  <div style="font-size:10px;color:var(--muted);margin-top:8px;line-height:1.5;">Maintenance 74×29 = 2146 · −500 deficit · protein 74×2 · fat 74×0.9. <strong style="color:var(--gold-light);">Protein is non-negotiable — hit 148g every single day.</strong></div>
+</div>
+
+<!-- Fitness sub-tabs -->
+<div style="display:flex;gap:4px;margin-bottom:14px;background:var(--bg3);border-radius:10px;padding:3px;">
+  <button class="stab active" id="fit-tab-workout" onclick="showFit('workout')">Workout</button>
+  <button class="stab" id="fit-tab-diet" onclick="showFit('diet')">Diet</button>
+  <button class="stab" id="fit-tab-supps" onclick="showFit('supps')">Supplements</button>
+  <button class="stab" id="fit-tab-check" onclick="showFit('check')">Daily Check</button>
+</div>
+
+<!-- ── WORKOUT PANEL ── -->
+<div id="fit-workout">
+
+<!-- Today's fitness plan summary -->
+<div id="fit-today-card" style="margin-bottom:12px;"></div>
+
+<!-- PHASE 1 workout (JS-rendered, shown only in week 1) -->
+<div id="fit-p1-workout" class="hidden"></div>
+
+<!-- PHASE 2 workout (Push/Pull/Legs) -->
+<div id="fit-p2-workout">
 <div class="info-box" style="margin-bottom:12px;">
   <strong>Phase 2 — Fat Burning Mode</strong> · Push/Pull/Legs · 6 days/week · 10–15 reps · Abs after every session · LISS cardio last · Progressive overload weekly.
 </div>
@@ -476,6 +560,183 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer}
   </div>
 </div>
 
+<!-- Warm-up & Cool-down card -->
+<div class="wo-day-card" id="wdc-warm">
+  <div class="wo-day-hdr" onclick="toggleWoDay('warm')">
+    <div>
+      <div class="wo-day-title">Warm-up &amp; Cool-down</div>
+      <div class="wo-day-sub">5 min warm-up can save 5 months of injury</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;">
+      <span class="wo-badge" style="background:rgba(29,158,117,0.12);color:var(--teal-light);border-color:rgba(29,158,117,0.3);">Safety</span>
+      <span class="wo-chev" id="wchev-warm">▼</span>
+    </div>
+  </div>
+  <div class="wo-day-body" id="wbody-warm">
+    <div style="font-size:11px;font-weight:500;color:var(--teal-light);text-transform:uppercase;letter-spacing:.07em;margin:4px 0 6px;">Warm-up (5–7 min · 7–10 on leg day)</div>
+    <div style="display:flex;flex-direction:column;gap:5px;margin-bottom:10px;">
+      <div style="background:var(--bg3);border-radius:7px;padding:8px 10px;font-size:11px;color:var(--muted);">3 min light cardio (treadmill / cross trainer) — raise body temp</div>
+      <div style="background:var(--bg3);border-radius:7px;padding:8px 10px;font-size:11px;color:var(--muted);">Arm circles 15 each way · Band pull-aparts 15 (squeeze if no band)</div>
+      <div style="background:var(--bg3);border-radius:7px;padding:8px 10px;font-size:11px;color:var(--muted);">Activation: push-ups (push) / cat-cow + lat pulldown light (pull) / glute bridges + bodyweight squats (legs)</div>
+      <div style="background:var(--bg3);border-radius:7px;padding:8px 10px;font-size:11px;color:var(--muted);">1 warm-up set of your first exercise at 50% weight</div>
+    </div>
+    <div style="font-size:11px;font-weight:500;color:var(--blue-light);text-transform:uppercase;letter-spacing:.07em;margin:4px 0 6px;">Cool-down (5 min · hold each 30–45s)</div>
+    <div style="display:flex;flex-direction:column;gap:5px;">
+      <div style="background:var(--bg3);border-radius:7px;padding:8px 10px;font-size:11px;color:var(--muted);"><strong style="color:var(--text);">Push:</strong> chest doorway · overhead tricep · cross-body shoulder · chest opener · neck rolls</div>
+      <div style="background:var(--bg3);border-radius:7px;padding:8px 10px;font-size:11px;color:var(--muted);"><strong style="color:var(--text);">Pull:</strong> lat stretch · child's pose · bicep wall · upper trap · thread the needle</div>
+      <div style="background:var(--bg3);border-radius:7px;padding:8px 10px;font-size:11px;color:var(--muted);"><strong style="color:var(--text);">Legs:</strong> standing quad · hamstring · pigeon · hip flexor · butterfly · calf stretch</div>
+    </div>
+    <div class="cardio-note" style="margin-top:10px;"><strong>Full session order:</strong> Warm-up → Lifts (45–60 min) → Abs (5–8 min) → Cool-down → LISS cardio (15–20 min).</div>
+  </div>
+</div>
+
+</div><!-- end fit-p2-workout -->
+
+</div><!-- end fit-workout panel -->
+
+<!-- ── DIET PANEL ── -->
+<div id="fit-diet" class="hidden">
+
+  <!-- PHASE 1 diet (JS-rendered, shown only in week 1) -->
+  <div id="fit-p1-diet" class="hidden"></div>
+
+  <!-- PHASE 2 diet (IF 16:8 + macro meal plans) -->
+  <div id="fit-p2-diet">
+  <div class="info-box" style="margin-bottom:12px;">
+    <strong>16:8 intermittent fasting.</strong> Fast 8 PM → 12 PM next day. Eating window <strong style="color:var(--gold-light);">12 PM – 8 PM</strong>. During fast: water, black coffee, green tea only (zero cal). 2 meals + 1 protein snack.
+  </div>
+
+  <!-- Meal plan A -->
+  <div class="wo-day-card">
+    <div class="wo-day-hdr" onclick="toggleWoDay('mealA')">
+      <div><div class="wo-day-title">Meal Plan A — Paneer day</div><div class="wo-day-sub">~1660 cal · ~150g protein</div></div>
+      <div style="display:flex;align-items:center;gap:6px;"><span class="wo-badge" style="background:rgba(29,158,117,0.12);color:var(--teal-light);border-color:rgba(29,158,117,0.3);">~150g P</span><span class="wo-chev" id="wchev-mealA">▼</span></div>
+    </div>
+    <div class="wo-day-body" id="wbody-mealA">
+      <div class="abs-header" style="color:var(--gold-light);"><span>Meal 1 — Break-fast · 12:00 PM</span></div>
+      <table class="abs-table"><tbody>
+        <tr><td><span class="ex-name">Paneer Bhurji</span><br><span class="abs-focus" style="color:var(--muted);">180g paneer</span></td><td>32g P</td><td>360</td></tr>
+        <tr><td><span class="ex-name">Chole / Rajma (thick)</span><br><span class="abs-focus" style="color:var(--muted);">1 bowl</span></td><td>14g P</td><td>240</td></tr>
+        <tr><td><span class="ex-name">Whole-wheat roti</span><br><span class="abs-focus" style="color:var(--muted);">2 rotis</span></td><td>6g P</td><td>200</td></tr>
+        <tr><td><span class="ex-name">Salad + curd</span><br><span class="abs-focus" style="color:var(--muted);">1 bowl</span></td><td>5g P</td><td>80</td></tr>
+      </tbody></table>
+      <div class="abs-header" style="color:var(--gold-light);"><span>Snack · 3:30–4:00 PM</span></div>
+      <table class="abs-table"><tbody>
+        <tr><td><span class="ex-name">Double whey shake (water)</span><br><span class="abs-focus" style="color:var(--muted);">2 scoops</span></td><td>50g P</td><td>240</td></tr>
+        <tr><td><span class="ex-name">Roasted peanuts</span><br><span class="abs-focus" style="color:var(--muted);">25g</span></td><td>7g P</td><td>145</td></tr>
+      </tbody></table>
+      <div class="abs-header" style="color:var(--gold-light);"><span>Meal 2 — Dinner · 7:00–8:00 PM</span></div>
+      <table class="abs-table"><tbody>
+        <tr><td><span class="ex-name">Tofu / soy chunk curry</span><br><span class="abs-focus" style="color:var(--muted);">150g tofu / 50g dry soy</span></td><td>25g P</td><td>200</td></tr>
+        <tr><td><span class="ex-name">Moong dal (thick)</span><br><span class="abs-focus" style="color:var(--muted);">1 bowl</span></td><td>12g P</td><td>180</td></tr>
+        <tr><td><span class="ex-name">Rice (small)</span><br><span class="abs-focus" style="color:var(--muted);">1 cup cooked</span></td><td>3g P</td><td>120</td></tr>
+        <tr><td><span class="ex-name">Sabzi (any veg)</span><br><span class="abs-focus" style="color:var(--muted);">1 bowl</span></td><td>3g P</td><td>80</td></tr>
+      </tbody></table>
+      <div class="cardio-note"><strong>Day total:</strong> ~1665 cal · ~157g protein. Slightly over target — fine. Hit protein, keep carbs moderate.</div>
+    </div>
+  </div>
+
+  <!-- Meal plan B -->
+  <div class="wo-day-card">
+    <div class="wo-day-hdr" onclick="toggleWoDay('mealB')">
+      <div><div class="wo-day-title">Meal Plan B — Soy &amp; tofu day</div><div class="wo-day-sub">~1640 cal · ~152g protein</div></div>
+      <div style="display:flex;align-items:center;gap:6px;"><span class="wo-badge" style="background:rgba(29,158,117,0.12);color:var(--teal-light);border-color:rgba(29,158,117,0.3);">~152g P</span><span class="wo-chev" id="wchev-mealB">▼</span></div>
+    </div>
+    <div class="wo-day-body" id="wbody-mealB">
+      <div class="abs-header" style="color:var(--gold-light);"><span>Meal 1 — Break-fast · 12:00 PM</span></div>
+      <table class="abs-table"><tbody>
+        <tr><td><span class="ex-name">Soy chunk dry sabzi</span><br><span class="abs-focus" style="color:var(--muted);">50g dry soy</span></td><td>25g P</td><td>170</td></tr>
+        <tr><td><span class="ex-name">Paneer paratha</span><br><span class="abs-focus" style="color:var(--muted);">2 (120g paneer)</span></td><td>26g P</td><td>420</td></tr>
+        <tr><td><span class="ex-name">Curd / raita</span><br><span class="abs-focus" style="color:var(--muted);">200g</span></td><td>8g P</td><td>100</td></tr>
+      </tbody></table>
+      <div class="abs-header" style="color:var(--gold-light);"><span>Snack · 3:30–4:00 PM</span></div>
+      <table class="abs-table"><tbody>
+        <tr><td><span class="ex-name">Double whey shake (water)</span><br><span class="abs-focus" style="color:var(--muted);">2 scoops</span></td><td>50g P</td><td>240</td></tr>
+        <tr><td><span class="ex-name">Soy milk + peanut butter</span><br><span class="abs-focus" style="color:var(--muted);">200ml + 1 tbsp</span></td><td>11g P</td><td>180</td></tr>
+      </tbody></table>
+      <div class="abs-header" style="color:var(--gold-light);"><span>Meal 2 — Dinner · 7:00–8:00 PM</span></div>
+      <table class="abs-table"><tbody>
+        <tr><td><span class="ex-name">Grilled tofu / tofu tikka</span><br><span class="abs-focus" style="color:var(--muted);">180g tofu</span></td><td>18g P</td><td>180</td></tr>
+        <tr><td><span class="ex-name">Dal makhani (thick)</span><br><span class="abs-focus" style="color:var(--muted);">1 bowl</span></td><td>12g P</td><td>180</td></tr>
+        <tr><td><span class="ex-name">Buttermilk / chaas</span><br><span class="abs-focus" style="color:var(--muted);">1 glass</span></td><td>3g P</td><td>40</td></tr>
+      </tbody></table>
+      <div class="cardio-note"><strong>Day total:</strong> ~1730 cal · ~153g protein. On non-training days drop the snack peanut butter to stay near 1650.</div>
+    </div>
+  </div>
+
+  <!-- Protein arsenal -->
+  <div class="wo-day-card">
+    <div class="wo-day-hdr" onclick="toggleWoDay('arsenal')">
+      <div><div class="wo-day-title">Vegetarian protein arsenal</div><div class="wo-day-sub">Mix &amp; match to hit 148g</div></div>
+      <div style="display:flex;align-items:center;gap:6px;"><span class="wo-badge" style="background:rgba(239,159,39,0.12);color:var(--gold);border-color:rgba(239,159,39,0.3);">Ref</span><span class="wo-chev" id="wchev-arsenal">▼</span></div>
+    </div>
+    <div class="wo-day-body" id="wbody-arsenal">
+      <table class="abs-table"><tbody>
+        <tr><td><span class="ex-name">Whey protein</span></td><td>1 scoop</td><td>25g</td></tr>
+        <tr><td><span class="ex-name">Soy chunks (dry)</span></td><td>50g</td><td>25g</td></tr>
+        <tr><td><span class="ex-name">Paneer</span></td><td>100g</td><td>18g</td></tr>
+        <tr><td><span class="ex-name">Cottage cheese (chenna)</span></td><td>100g</td><td>14g</td></tr>
+        <tr><td><span class="ex-name">Rajma / chole (cooked)</span></td><td>1 bowl</td><td>12–15g</td></tr>
+        <tr><td><span class="ex-name">Greek yogurt / hung curd</span></td><td>150g</td><td>10–12g</td></tr>
+        <tr><td><span class="ex-name">Tofu</span></td><td>100g</td><td>10g</td></tr>
+        <tr><td><span class="ex-name">Moong dal (cooked)</span></td><td>1 bowl</td><td>8–10g</td></tr>
+        <tr><td><span class="ex-name">Curd / yogurt</span></td><td>200g</td><td>8g</td></tr>
+        <tr><td><span class="ex-name">Peanuts / sprouts</span></td><td>30g / 1 bowl</td><td>8g</td></tr>
+        <tr><td><span class="ex-name">Soy milk</span></td><td>200ml</td><td>7g</td></tr>
+      </tbody></table>
+      <div class="green-box" style="margin-top:8px;"><strong>5 rules:</strong> ① Double-scoop whey daily — non-negotiable for veg. ② Dal + rice = complete protein. ③ Soy chunks daily (cheapest, highest protein). ④ Paneer/tofu in every meal. ⑤ Soy milk over regular milk.</div>
+    </div>
+  </div>
+  </div><!-- end fit-p2-diet -->
+</div>
+
+<!-- ── SUPPLEMENTS PANEL ── -->
+<div id="fit-supps" class="hidden">
+
+  <!-- PHASE 1 supplements (JS-rendered, shown only in week 1) -->
+  <div id="fit-p1-supps" class="hidden"></div>
+
+  <!-- PHASE 2 supplements (full cutting stack) -->
+  <div id="fit-p2-supps">
+  <div class="info-box" style="margin-bottom:12px;">
+    Supplements <strong>support</strong> the plan — they don't replace food. Only whey + creatine are truly worth it for most people. Everything else is optional insurance for a vegetarian cut.
+  </div>
+
+  <div style="font-size:11px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-light);margin:0 0 8px 2px;">Core — take these</div>
+  <div class="st-res-list" style="margin-bottom:14px;">
+    <div class="st-res" style="border-left:3px solid var(--teal);"><div class="st-res-name">Whey protein — 2 scoops/day</div><div class="st-res-sub">~50g protein. 1 scoop in the 3:30–4 PM snack, 1 post-workout or with dinner. The single most important supplement for a vegetarian hitting 148g.</div></div>
+    <div class="st-res" style="border-left:3px solid var(--teal);"><div class="st-res-name">Creatine monohydrate — 5g/day</div><div class="st-res-sub">Any time, daily, even rest days. Mix in water or your shake. Most researched supplement for strength + muscle. Vegetarians respond especially well (low dietary creatine).</div></div>
+  </div>
+
+  <div style="font-size:11px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--gold-light);margin:0 0 8px 2px;">Recommended for vegetarians</div>
+  <div class="st-res-list" style="margin-bottom:14px;">
+    <div class="st-res" style="border-left:3px solid var(--gold);"><div class="st-res-name">Vitamin B12 — 1 tablet/day (or 1500mcg 2–3×/wk)</div><div class="st-res-sub">Vegetarians are commonly deficient. Affects energy + nerves. Cheap, essential.</div></div>
+    <div class="st-res" style="border-left:3px solid var(--gold);"><div class="st-res-name">Vitamin D3 — 1000–2000 IU/day</div><div class="st-res-sub">Most Indians are deficient. Take with a fatty meal (lunch). Supports testosterone, bones, mood.</div></div>
+    <div class="st-res" style="border-left:3px solid var(--gold);"><div class="st-res-name">Omega-3 (algal or flax) — daily</div><div class="st-res-sub">Veg diets are low in EPA/DHA. Algal oil capsule, or 1 tbsp ground flaxseed in your shake.</div></div>
+  </div>
+
+  <div style="font-size:11px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0 0 8px 2px;">Optional</div>
+  <div class="st-res-list" style="margin-bottom:12px;">
+    <div class="st-res"><div class="st-res-name">Multivitamin — 1/day with breakfast</div><div class="st-res-sub">Covers small gaps on a calorie deficit. Optional if diet is varied.</div></div>
+    <div class="st-res"><div class="st-res-name">Black coffee — pre-workout</div><div class="st-res-sub">Free pre-workout. Boosts fasted-training performance + fat oxidation. You already drink it.</div></div>
+  </div>
+
+  <div class="info-box" style="background:rgba(226,75,74,0.08);border-color:rgba(226,75,74,0.25);color:#F7C1C1;">
+    <strong style="color:#fff;">Not needed:</strong> fat burners, BCAAs (whey already covers them), mass gainers (you're cutting), test boosters. Save your money. Whey + creatine + B12 + D3 is a complete, evidence-based stack.
+  </div>
+  </div><!-- end fit-p2-supps -->
+</div>
+
+<!-- ── DAILY CHECK PANEL ── -->
+<div id="fit-check" class="hidden">
+  <div class="info-box" style="margin-bottom:12px;">
+    Tick these every day. Resets at midnight. <strong style="color:var(--gold-light);">Consistency &gt; perfection</strong> — aim to close every ring most days.
+  </div>
+  <div id="fit-check-progress" style="margin-bottom:12px;"></div>
+  <div id="fit-check-list"></div>
+  <button class="save-btn" style="margin-top:10px;" onclick="resetChecks()">Reset today's checks</button>
+</div>
+
 </div><!-- end workout tab -->
 
 <!-- ═══ STUDY TAB ═══ -->
@@ -484,15 +745,10 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer}
 <!-- Header -->
 <div style="background:linear-gradient(135deg,#04342C,#26215C);border-radius:12px;padding:16px;margin-bottom:14px;position:relative;overflow:hidden;">
   <div style="position:absolute;top:-20px;right:-20px;width:80px;height:80px;background:rgba(29,158,117,0.15);border-radius:50%;"></div>
-  <div style="font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-light);margin-bottom:6px;">DHC Programmer Post — 3-Month Plan</div>
+  <div style="font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-light);margin-bottom:6px;">DHC Programmer Post — 12-Week Plan</div>
   <div style="font-size:17px;font-weight:500;color:#fff;margin-bottom:5px;line-height:1.3;">Clear the exam. Become permanent staff at DHC.</div>
-  <div style="font-size:12px;color:rgba(159,225,203,0.7);line-height:1.5;">Starting 1 Jun 2026 · 1 hr/weekday · 3 hrs/Sunday · ~72 total study hours · Ready by 28 Aug</div>
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:12px;">
-    <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px 10px;"><div style="font-size:10px;color:rgba(159,225,203,0.6);margin-bottom:2px;">Total study hours</div><div style="font-size:16px;font-weight:500;color:#fff;">72 hrs</div></div>
-    <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px 10px;"><div style="font-size:10px;color:rgba(159,225,203,0.6);margin-bottom:2px;">Ready-by date</div><div style="font-size:16px;font-weight:500;color:#fff;">28 Aug 2026</div></div>
-    <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px 10px;"><div style="font-size:10px;color:rgba(159,225,203,0.6);margin-bottom:2px;">Core topics</div><div style="font-size:16px;font-weight:500;color:#fff;">13</div></div>
-    <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px 10px;"><div style="font-size:10px;color:rgba(159,225,203,0.6);margin-bottom:2px;">Phases</div><div style="font-size:16px;font-weight:500;color:#fff;">4</div></div>
-  </div>
+  <div style="font-size:12px;color:rgba(159,225,203,0.7);line-height:1.5;"><span id="study-start-label">Day 1</span> · 1 hr/day continuous (5–6 AM) · 2 hr weekly mock (Sun) · self-paced, no fixed exam date</div>
+  <div id="study-progress-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:12px;"></div>
 </div>
 
 <!-- Sub-tabs for study -->
@@ -507,7 +763,7 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer}
 <!-- OVERVIEW -->
 <div id="sp-overview">
   <div class="st-phase-card" style="border-left:3px solid #1D9E75;">
-    <div class="st-ph-hdr"><div class="st-ph-title">Phase 1 — Technical Core</div><div class="st-ph-badge" style="background:rgba(29,158,117,0.15);color:var(--teal-light);">Jun 1–28 · ~45% weight</div></div>
+    <div class="st-ph-hdr"><div class="st-ph-title">Phase 1 — Technical Core</div><div class="st-ph-badge" style="background:rgba(29,158,117,0.15);color:var(--teal-light);">Wk 1–4 · ~45% weight</div></div>
     <div class="st-ph-desc">Build the hardest, most weighted section first while you're fresh.</div>
     <div class="st-topic-grid">
       <div class="st-topic"><div class="st-topic-name">Data Structures & Algorithms</div><div class="st-topic-sub">Arrays, Linked Lists, Trees, Sorting, Big-O</div></div>
@@ -517,7 +773,7 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer}
     </div>
   </div>
   <div class="st-phase-card" style="border-left:3px solid #378ADD;">
-    <div class="st-ph-hdr"><div class="st-ph-title">Phase 2 — Networking & Systems</div><div class="st-ph-badge" style="background:rgba(55,138,221,0.15);color:var(--blue-light);">Jun 29–Jul 19 · ~25% weight</div></div>
+    <div class="st-ph-hdr"><div class="st-ph-title">Phase 2 — Networking & Systems</div><div class="st-ph-badge" style="background:rgba(55,138,221,0.15);color:var(--blue-light);">Wk 5–7 · ~25% weight</div></div>
     <div class="st-ph-desc">Networking is consistently high-weightage in court IT exams.</div>
     <div class="st-topic-grid">
       <div class="st-topic"><div class="st-topic-name">Computer Networks</div><div class="st-topic-sub">OSI, TCP/IP, DNS, HTTP, Ports, Subnetting</div></div>
@@ -527,7 +783,7 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer}
     </div>
   </div>
   <div class="st-phase-card" style="border-left:3px solid #EF9F27;">
-    <div class="st-ph-hdr"><div class="st-ph-title">Phase 3 — Aptitude & Awareness</div><div class="st-ph-badge" style="background:rgba(239,159,39,0.15);color:var(--gold-light);">Jul 20–Aug 9 · ~20% weight</div></div>
+    <div class="st-ph-hdr"><div class="st-ph-title">Phase 3 — Aptitude & Awareness</div><div class="st-ph-badge" style="background:rgba(239,159,39,0.15);color:var(--gold-light);">Wk 8–10 · ~20% weight</div></div>
     <div class="st-ph-desc">English, Reasoning, Quant, and GK.</div>
     <div class="st-topic-grid">
       <div class="st-topic"><div class="st-topic-name">Reasoning & Puzzles</div><div class="st-topic-sub">Series, Coding-Decoding, Blood Relations</div></div>
@@ -537,8 +793,8 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer}
     </div>
   </div>
   <div class="st-phase-card" style="border-left:3px solid #D85A30;">
-    <div class="st-ph-hdr"><div class="st-ph-title">Phase 4 — Revision + Mock Tests</div><div class="st-ph-badge" style="background:rgba(216,90,48,0.15);color:#F0997B;">Aug 10–28 · Consolidation</div></div>
-    <div class="st-ph-desc">Full-length timed mocks every Sunday + weekday quick-fire revision.</div>
+    <div class="st-ph-hdr"><div class="st-ph-title">Phase 4 — Revision + Mock Tests</div><div class="st-ph-badge" style="background:rgba(216,90,48,0.15);color:#F0997B;">Wk 11–12 · Consolidation</div></div>
+    <div class="st-ph-desc">Full-length timed mock every Sunday + weekday quick-fire revision. Plan repeats from Day 1 if your exam is later.</div>
     <div class="st-topic-grid">
       <div class="st-topic"><div class="st-topic-name">Mock Tests</div><div class="st-topic-sub">Testbook / Adda247 DHC series</div></div>
       <div class="st-topic"><div class="st-topic-name">PYQ Analysis</div><div class="st-topic-sub">JJA 2018, NIC, SSC CHSL tech papers</div></div>
@@ -636,301 +892,38 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer}
 
 </div><!-- end study tab -->
 
-<!-- ═══ BUSINESS TAB ═══ -->
-<div id="view-biz" class="hidden">
-
-<!-- Header card -->
-<div style="background:linear-gradient(135deg,#042C53,#26215C);border-radius:12px;padding:16px;margin-bottom:14px;position:relative;overflow:hidden;">
-  <div style="position:absolute;top:-20px;right:-20px;width:80px;height:80px;background:rgba(55,138,221,0.15);border-radius:50%;"></div>
-  <div style="font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-light);margin-bottom:6px;">MyFiling.ai — Founder Blueprint</div>
-  <div style="font-size:17px;font-weight:500;color:#fff;margin-bottom:5px;line-height:1.3;">Your step-by-step plan from idea to revenue</div>
-  <div style="font-size:12px;color:rgba(181,212,244,0.7);line-height:1.5;">6 phases · Real actions only · Delhi HC first · ₹50K MRR by Month 12</div>
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:12px;">
-    <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px 10px;"><div style="font-size:10px;color:rgba(181,212,244,0.6);margin-bottom:2px;">Month 12 Target</div><div style="font-size:16px;font-weight:500;color:#fff;">₹50K+ MRR</div></div>
-    <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px 10px;"><div style="font-size:10px;color:rgba(181,212,244,0.6);margin-bottom:2px;">Paying users target</div><div style="font-size:16px;font-weight:500;color:#fff;">50–100</div></div>
-    <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px 10px;"><div style="font-size:10px;color:rgba(181,212,244,0.6);margin-bottom:2px;">Accuracy required</div><div style="font-size:16px;font-weight:500;color:#fff;">>90%</div></div>
-    <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px 10px;"><div style="font-size:10px;color:rgba(181,212,244,0.6);margin-bottom:2px;">Launch price</div><div style="font-size:16px;font-weight:500;color:#fff;">₹799/mo</div></div>
-  </div>
-</div>
-
-<!-- THE ONE RULE -->
-<div style="background:rgba(226,75,74,0.1);border:1px solid rgba(226,75,74,0.3);border-radius:10px;padding:12px 14px;margin-bottom:14px;">
-  <div style="font-size:10px;font-weight:500;color:#F09595;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">The one rule that will save you</div>
-  <div style="font-size:12px;color:#F7C1C1;line-height:1.5;"><strong style="color:#fff;font-weight:500;">Delhi High Court only</strong> for the first 6 months. Depth of accuracy at one court is worth more than shallow coverage across five. Lawyers will forgive limited scope. They will never forgive a wrong answer.</div>
-</div>
-
-<!-- PHASE CARDS -->
-
-<!-- Phase 1 -->
-<div class="biz-card" id="bcard-1">
-  <div class="biz-card-hdr" onclick="toggleBiz(1)">
-    <div style="display:flex;align-items:center;gap:10px;">
-      <div class="biz-phase-num" style="background:rgba(55,138,221,0.15);color:var(--blue-light);">1</div>
-      <div>
-        <div class="biz-card-title">Validate the Problem <span class="biz-now-badge">Do this now</span></div>
-        <div class="biz-card-sub">Weeks 1–6 · Before writing a single line of code</div>
-      </div>
-    </div>
-    <span class="biz-chev" id="bchev-1">▼</span>
-  </div>
-  <div class="biz-card-body" id="bbody-1">
-    <div class="biz-warn">Do not skip this. You need lawyers to confirm — in their own words — that this pain is real and they will pay to fix it.</div>
-    <div class="biz-step-list">
-      <div class="biz-step"><div class="biz-step-num critical-num">1.1</div><div><div class="biz-step-title">Share your survey aggressively</div><div class="biz-step-desc">Send Jotform survey to every lawyer you know. Post in Delhi Bar Association WhatsApp groups. Post on LinkedIn tagging "Delhi High Court", "advocates", "LegalTech India". Target: 50+ responses in 2 weeks.</div><span class="biz-tag critical">Do this week</span></div></div>
-      <div class="biz-step"><div class="biz-step-num critical-num">1.2</div><div><div class="biz-step-title">Have 15 real conversations with lawyers</div><div class="biz-step-desc">Not forms — real calls. Target junior advocates (25–32 yrs) at Delhi NCR chambers. Ask: "Walk me through the last time a filing was returned." Listen. Do NOT pitch yet.</div><span class="biz-tag critical">Most important step</span></div></div>
-      <div class="biz-step"><div class="biz-step-num">1.3</div><div><div class="biz-step-title">Visit DHC registry in person</div><div class="biz-step-desc">Spend 2 days at the DHC filing counter. Watch filings being returned. Talk to registry staff. Observe which defects come up most. This is ground truth no survey can give you.</div><span class="biz-tag important">High value</span></div></div>
-      <div class="biz-step"><div class="biz-step-num">1.4</div><div><div class="biz-step-title">Manually build a defects database</div><div class="biz-step-desc">From your interviews and registry visits, create a spreadsheet of every defect type you encounter. Name, frequency, cause, how it could be detected automatically. This becomes the foundation of your rules engine.</div><span class="biz-tag important">Foundation</span></div></div>
-    </div>
-    <div class="biz-checklist-lbl">Answer these before Phase 2</div>
-    <div class="biz-check-item">Are filings returned frequently enough for lawyers to care?</div>
-    <div class="biz-check-item">Which 5–8 defect types cause 80% of all rejections at DHC?</div>
-    <div class="biz-check-item">Will junior advocates use this or will seniors block it?</div>
-    <div class="biz-check-item">Is ₹999/month realistic or does pricing need to change?</div>
-    <div class="biz-check-item">Do lawyers have data privacy concerns about uploading client documents?</div>
-  </div>
-</div>
-
-<!-- Phase 2 -->
-<div class="biz-card" id="bcard-2">
-  <div class="biz-card-hdr" onclick="toggleBiz(2)">
-    <div style="display:flex;align-items:center;gap:10px;">
-      <div class="biz-phase-num" style="background:rgba(99,153,34,0.15);color:#C0DD97;">2</div>
-      <div>
-        <div class="biz-card-title">Find a Legal Co-founder</div>
-        <div class="biz-card-sub">Weeks 4–10 · Your single biggest risk right now</div>
-      </div>
-    </div>
-    <span class="biz-chev" id="bchev-2">▼</span>
-  </div>
-  <div class="biz-card-body" id="bbody-2">
-    <div class="biz-warn">The rules engine is only as good as your legal knowledge. You need a lawyer deeply involved — not a monthly advisor, a partner who lives this problem. Without this, your accuracy will be questioned.</div>
-    <div class="biz-step-list">
-      <div class="biz-step"><div class="biz-step-num critical-num">2.1</div><div><div class="biz-step-title">Ideal co-founder profile</div><div class="biz-step-desc">Practicing advocate, 3–8 yrs experience, has personally felt the pain of filing rejections, open to tech, files regularly at DHC. Not retired, not consulting — a working advocate with equity stake, excited about the problem.</div><span class="biz-tag critical">Must have</span></div></div>
-      <div class="biz-step"><div class="biz-step-num">2.2</div><div><div class="biz-step-title">Where to find them</div><div class="biz-step-desc">Your Phase 1 lawyer interviews — look for the ones who got excited and asked follow-up questions. Post in LegalTech India communities on LinkedIn. Reach out via NLU alumni networks (NLUD, NLU Delhi grads have the most DHC exposure).</div></div></div>
-      <div class="biz-step"><div class="biz-step-num">2.3</div><div><div class="biz-step-title">Fallback: law firm design partner</div><div class="biz-step-desc">If no co-founder, partner with a small firm (3–8 lawyers) as a design partner — free lifetime access in exchange for rule-writing expertise, real test filings, and credibility.</div><span class="biz-tag important">Good fallback</span></div></div>
-    </div>
-    <div class="biz-checklist-lbl">Also do in this phase</div>
-    <div class="biz-check-item">Register Private Limited company via Razorpay Rize or Startups.gov.in (₹8K–15K)</div>
-    <div class="biz-check-item">Secure myfiling.ai domain — register NOW before someone else does</div>
-    <div class="biz-check-item">Decide legal disclaimer and terms of service with co-founder before any user touches the product</div>
-    <div class="biz-check-item">Decide data retention policy (delete PDFs after analysis? 24hrs? 30 days?)</div>
-    <div class="biz-check-item">Set up data privacy policy — DPDP Act 2023 compliance is mandatory</div>
-  </div>
-</div>
-
-<!-- Phase 3 -->
-<div class="biz-card" id="bcard-3">
-  <div class="biz-card-hdr" onclick="toggleBiz(3)">
-    <div style="display:flex;align-items:center;gap:10px;">
-      <div class="biz-phase-num" style="background:rgba(239,159,39,0.15);color:var(--gold-light);">3</div>
-      <div>
-        <div class="biz-card-title">Build the MVP — DHC Only</div>
-        <div class="biz-card-sub">Weeks 6–16 · Build the minimum. Ship fast. Improve after.</div>
-      </div>
-    </div>
-    <span class="biz-chev" id="bchev-3">▼</span>
-  </div>
-  <div class="biz-card-body" id="bbody-3">
-    <div class="biz-info">Your MVP doesn't need to be perfect. It needs to be <strong style="color:var(--blue-light);">accurate enough to be useful</strong> and honest about what it cannot do. Ship it with a clear disclaimer.</div>
-    <div class="biz-step-list">
-      <div class="biz-step"><div class="biz-step-num critical-num">3.1</div><div><div class="biz-step-title">Write the DHC rules engine first (no code yet)</div><div class="biz-step-desc">Document every detectable rule in a spreadsheet: Rule ID, rule text, what the tool checks, defect title, severity (Critical/Minor/Warning), page/section. Start with 8–10 rules causing 80% of rejections. This spreadsheet IS your product logic.</div><span class="biz-tag critical">Before coding</span></div></div>
-      <div class="biz-step"><div class="biz-step-num">3.2</div><div><div class="biz-step-title">Build 2 screens only</div><div class="biz-step-desc">Screen 1: PDF upload + court selection. Screen 2: defect results with severity + page references + probability score. That is it. Stack: Next.js frontend, Python FastAPI backend, pdfplumber for text PDFs.</div><span class="biz-tag go">Scope discipline</span></div></div>
-      <div class="biz-step"><div class="biz-step-num critical-num">3.3</div><div><div class="biz-step-title">Test on 50 real filings before showing anyone</div><div class="biz-step-desc">Get 50 actual DHC filings — mix of passed and returned. Run through your tool. Manually verify every output. Accuracy target before pilot: 85%+. Below that — do not pilot yet. Fix the gaps first.</div><span class="biz-tag critical">Quality gate</span></div></div>
-      <div class="biz-step"><div class="biz-step-num">3.4</div><div><div class="biz-step-title">Build the downloadable defect report</div><div class="biz-step-desc">A PDF report a junior can hand to their senior. Include MyFiling.ai logo, court name, date, file name, clean defect list with page references. When a senior sees this report, they become aware of you — it's free word-of-mouth marketing built into the product.</div><span class="biz-tag important">Viral loop</span></div></div>
-      <div class="biz-step"><div class="biz-step-num">3.5</div><div><div class="biz-step-title">Add login + 3 free analyses/month</div><div class="biz-step-desc">Use Clerk or Supabase Auth. Free tier (3 analyses/month) from day one — no credit card required. Add Razorpay for paid subscriptions now so it's ready for launch.</div><span class="biz-tag go">Revenue ready</span></div></div>
-    </div>
-    <div class="biz-warn" style="margin-top:4px;">Do NOT build: bulk upload · team accounts · filing history · rule explanations · auto-corrections · multi-court support · API. Every feature added now delays launch by days.</div>
-  </div>
-</div>
-
-<!-- Phase 4 -->
-<div class="biz-card" id="bcard-4">
-  <div class="biz-card-hdr" onclick="toggleBiz(4)">
-    <div style="display:flex;align-items:center;gap:10px;">
-      <div class="biz-phase-num" style="background:rgba(226,75,74,0.15);color:#F09595;">4</div>
-      <div>
-        <div class="biz-card-title">Closed Pilot with Real Users</div>
-        <div class="biz-card-sub">Weeks 16–22 · Most valuable 6 weeks of your journey</div>
-      </div>
-    </div>
-    <span class="biz-chev" id="bchev-4">▼</span>
-  </div>
-  <div class="biz-card-body" id="bbody-4">
-    <div class="biz-success">Every bug you find here is a bullet dodged. Treat every negative feedback as a gift — it's free consulting from your most important customers.</div>
-    <div class="biz-step-list">
-      <div class="biz-step"><div class="biz-step-num critical-num">4.1</div><div><div class="biz-step-title">Sign 3 pilot law firms (not individuals)</div><div class="biz-step-desc">Firms give you volume — a single junior at a 10-person firm may run 15–20 analyses in 6 weeks. Offer 60-day free access in exchange for: weekly feedback calls, permission to use anonymised filing patterns to improve accuracy, and a testimonial if satisfied.</div><span class="biz-tag critical">Key action</span></div></div>
-      <div class="biz-step"><div class="biz-step-num">4.2</div><div><div class="biz-step-title">WhatsApp group with all pilot users</div><div class="biz-step-desc">Create "MyFiling.ai Pilot Team" group. When they find a bug, they report in 10 seconds. Respond to every message within 2 hours. Lawyers talk to each other — how you handle the pilot group becomes your reputation.</div><span class="biz-tag important">Trust builder</span></div></div>
-      <div class="biz-step"><div class="biz-step-num critical-num">4.3</div><div><div class="biz-step-title">Track accuracy obsessively</div><div class="biz-step-desc">Ask pilot users to report every missed defect and every false positive. Track in a spreadsheet. Target: end pilot with 90%+ accuracy. Below that — do not launch publicly. Fix the gaps first.</div><span class="biz-tag critical">Non-negotiable</span></div></div>
-      <div class="biz-step"><div class="biz-step-num">4.4</div><div><div class="biz-step-title">Collect case studies, not just testimonials</div><div class="biz-step-desc">"This tool is great" is useless. "We caught a missing vakalatnama in 3 seconds for a ₹2 crore dispute" is powerful. Get specific stories with permission to publish. These will do more for your launch than any ad.</div><span class="biz-tag go">Marketing gold</span></div></div>
-    </div>
-    <div style="background:rgba(55,138,221,0.08);border:1px solid rgba(55,138,221,0.2);border-left:3px solid var(--blue);border-radius:8px;padding:10px 12px;font-size:12px;color:var(--blue-light);line-height:1.5;">
-      <strong style="color:#fff;font-weight:500;">The one question to ask at end of pilot:</strong> "If we switched this off tomorrow, would you miss it?" If majority say yes — launch. If they say "useful but not essential" — more work to do.
-    </div>
-  </div>
-</div>
-
-<!-- Phase 5 -->
-<div class="biz-card" id="bcard-5">
-  <div class="biz-card-hdr" onclick="toggleBiz(5)">
-    <div style="display:flex;align-items:center;gap:10px;">
-      <div class="biz-phase-num" style="background:rgba(127,119,221,0.15);color:var(--purple-light);">5</div>
-      <div>
-        <div class="biz-card-title">Public Launch</div>
-        <div class="biz-card-sub">Week 22–26 · Launch small, launch right</div>
-      </div>
-    </div>
-    <span class="biz-chev" id="bchev-5">▼</span>
-  </div>
-  <div class="biz-card-body" id="bbody-5">
-    <div class="biz-info">Do not launch to everyone at once. Launch to the legal community in Delhi first — tight, word-of-mouth driven. A big Product Hunt launch with no lawyer audience = 500 sign-ups and zero paying customers.</div>
-    <div class="biz-step-list">
-      <div class="biz-step"><div class="biz-step-num critical-num">5.1</div><div><div class="biz-step-title">Email your entire waitlist on Day 1</div><div class="biz-step-desc">Every email from your Jotform survey gets a personal-feeling message from you. Not a newsletter blast — a short direct message: "You signed up 3 months ago. MyFiling.ai is live for Delhi HC. Here is your free access." Subject: "Your free MyFiling.ai access is ready, [Name]"</div><span class="biz-tag critical">Day 1</span></div></div>
-      <div class="biz-step"><div class="biz-step-num critical-num">5.2</div><div><div class="biz-step-title">LinkedIn launch post with a real case study</div><div class="biz-step-desc">From your personal account — not the company page. Tell a real story from the pilot: "A junior caught a missing court fee error 10 minutes before filing a ₹50 lakh matter." Include a screenshot. Tag Delhi Bar Association. Human, specific, credible — beats any ad.</div><span class="biz-tag critical">Day 1</span></div></div>
-      <div class="biz-step"><div class="biz-step-num">5.3</div><div><div class="biz-step-title">Approach Delhi Bar Association for formal tie-up</div><div class="biz-step-desc">Formal letter offering: free demo session for junior advocates, free access for DBA members for 30 days, co-branded "Filing Guide" for DHC. Bar association endorsement is worth more than any marketing spend.</div><span class="biz-tag important">Week 1–2</span></div></div>
-      <div class="biz-step"><div class="biz-step-num">5.4</div><div><div class="biz-step-title">Partner with one law school</div><div class="biz-step-desc">NLU Delhi, Faculty of Law DU, or Amity Law School. Free access for their legal aid clinic and moot court. Law students graduate and become junior advocates in 1–3 years. One partnership = 300–500 future users.</div><span class="biz-tag go">Long-term pipeline</span></div></div>
-      <div class="biz-step"><div class="biz-step-num">5.5</div><div><div class="biz-step-title">Launch pricing: Free + Pro at ₹799/month</div><div class="biz-step-desc">Start below target ₹999 as early-bird rate. Announce: "Launch pricing — ₹799/month for first 100 users, then ₹999." Monthly subscriptions only — no annual plans yet. Introduce annual plans once you have proven 3-month retention.</div><span class="biz-tag go">Pricing</span></div></div>
-    </div>
-  </div>
-</div>
-
-<!-- Phase 6 -->
-<div class="biz-card" id="bcard-6">
-  <div class="biz-card-hdr" onclick="toggleBiz(6)">
-    <div style="display:flex;align-items:center;gap:10px;">
-      <div class="biz-phase-num" style="background:rgba(55,138,221,0.15);color:var(--blue-light);">6</div>
-      <div>
-        <div class="biz-card-title">Scale and Grow</div>
-        <div class="biz-card-sub">Month 7–12 · Only after 30+ paying happy users</div>
-      </div>
-    </div>
-    <span class="biz-chev" id="bchev-6">▼</span>
-  </div>
-  <div class="biz-card-body" id="bbody-6">
-    <div class="biz-warn">Do NOT start this phase until you have at least 30 paying users who are actively using the product. Growing a broken or under-used product just accelerates failure.</div>
-    <div class="biz-step-list">
-      <div class="biz-step"><div class="biz-step-num">6.1</div><div><div class="biz-step-title">Add Bombay High Court (Month 7–8)</div><div class="biz-step-desc">BHC is the second-highest volume court in India — large, tech-forward legal community. Doubles your total addressable market. By this point you know the rules engine build process from DHC — BHC should take half the time.</div><span class="biz-tag important">Revenue multiplier</span></div></div>
-      <div class="biz-step"><div class="biz-step-num">6.2</div><div><div class="biz-step-title">Launch the Firm plan (Month 8–9)</div><div class="biz-step-desc">Team accounts, shared filing history, senior can see all filings by juniors. Moves you from individuals to firms — one sale, 5–10 seats. CAC stays the same but revenue per customer triples. Target firms with at least one active Pro user — upsell from bottom up.</div><span class="biz-tag go">Revenue leap</span></div></div>
-      <div class="biz-step"><div class="biz-step-num">6.3</div><div><div class="biz-step-title">Build a referral programme</div><div class="biz-step-desc">Lawyers trust lawyers. "Refer a colleague, get one month free." The downloadable defect report already creates passive referrals every time a junior sends it to their senior. Make that loop explicit and reward it.</div><span class="biz-tag go">Low cost, high return</span></div></div>
-      <div class="biz-step"><div class="biz-step-num">6.4</div><div><div class="biz-step-title">Publish your accuracy data publicly</div><div class="biz-step-desc">By Month 9 you'll have thousands of real filings analysed. Publish an anonymised accuracy report: "MyFiling.ai detected defects in X% of filings at DHC. Here are the most common errors." Drives organic search, LinkedIn shares, media coverage — all for free.</div><span class="biz-tag important">Credibility flywheel</span></div></div>
-      <div class="biz-step"><div class="biz-step-num">6.5</div><div><div class="biz-step-title">Explore fundraising (Month 10–12)</div><div class="biz-step-desc">With 50+ paying users, 90%+ accuracy, 2 courts covered — you have traction for investors. Target: iSPIRT, LetsVenture, Stellaris Venture Partners, Kalaari Capital. Use funding to hire a legal content manager and a second developer. Do NOT fundraise before you have real usage data.</div><span class="biz-tag">When ready</span></div></div>
-    </div>
-    <div style="background:rgba(29,158,117,0.08);border:1px solid rgba(29,158,117,0.2);border-radius:10px;padding:12px;margin-top:4px;">
-      <div style="font-size:10px;font-weight:500;color:var(--teal-light);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;">Month 12 if you execute well</div>
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px;">
-        <div style="background:rgba(255,255,255,0.05);border-radius:6px;padding:8px;"><div style="font-size:10px;color:var(--muted);margin-bottom:2px;">Active users</div><div style="font-size:15px;font-weight:500;color:#fff;">200+</div></div>
-        <div style="background:rgba(255,255,255,0.05);border-radius:6px;padding:8px;"><div style="font-size:10px;color:var(--muted);margin-bottom:2px;">Paying users</div><div style="font-size:15px;font-weight:500;color:#fff;">50–80</div></div>
-        <div style="background:rgba(255,255,255,0.05);border-radius:6px;padding:8px;"><div style="font-size:10px;color:var(--muted);margin-bottom:2px;">MRR</div><div style="font-size:15px;font-weight:500;color:#fff;">₹50–80K</div></div>
-        <div style="background:rgba(255,255,255,0.05);border-radius:6px;padding:8px;"><div style="font-size:10px;color:var(--muted);margin-bottom:2px;">Courts live</div><div style="font-size:15px;font-weight:500;color:#fff;">DHC + BHC</div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-</div><!-- end biz tab -->
-
-<!-- ═══ WEEKDAY SCHEDULE ═══ -->
+<!-- ═══ SCHEDULE (dynamic — renders from WDS/HDS) ═══ -->
 <div id="view-weekday" class="hidden">
-
-<div class="dsec">
-  <div class="sec-lbl">Pre-dawn</div>
-  <div class="blk wd-blk" id="b-0445"><div class="bt c-dark">4:45 AM</div><div class="bc"><div class="bt2">Wake up. Cold water. No snooze.</div><div class="bs">Write: "Today I will..." Zero phone first hour.</div><span class="pill p-mind">mindset</span></div></div>
-  <div class="blk wd-blk" id="b-0500"><div class="bt c-purple">5:00–5:55</div><div class="bc"><div class="bt2">Study block #1 — peak brain time</div><div class="bs">50-min Pomodoro. Past papers, problems, concepts.</div><span class="pill p-exam">exam</span></div></div>
-  <div class="blk wd-blk" id="b-0555"><div class="bt c-gold">5:55–6:00</div><div class="bc"><div class="bt2">Gear up — leave for gym</div><div class="bs">Bag packed last night. Black coffee. Go.</div><span class="pill p-mind">prep</span></div></div>
-</div>
-
-<div class="dsec">
-  <div class="sec-lbl">Morning</div>
-
-  <!-- GYM BLOCK — expandable with full workout inside -->
-  <div class="blk wd-blk" id="b-0600">
-    <div class="bt c-teal">6:00–7:15</div>
-    <div class="bc">
-      <div class="bt2">GYM — lifts + abs + LISS cardio</div>
-      <div class="bs">Follow trainer program. Log sets. Abs after lifts. 15–20 min LISS last.</div>
-      <span class="pill p-gym">body</span>
-      <!-- Workout expand button — shows today's day type -->
-      <div id="gym-today-badge" style="margin-top:6px;"></div>
-      <button class="gym-expand-btn" onclick="toggleGymPanel('wd')" id="gym-btn-wd">
-        <span>View today's workout</span> <span class="chev-sm" id="gym-chev-wd">▼</span>
-      </button>
-      <div class="gym-panel" id="gym-panel-wd"></div>
-    </div>
+  <div style="display:flex;gap:4px;margin-bottom:12px;background:var(--bg3);border-radius:10px;padding:3px;">
+    <button class="stab active" id="sch-tab-wd" onclick="showSchedule('wd')">Weekday</button>
+    <button class="stab" id="sch-tab-we" onclick="showSchedule('we')">Weekend / Holiday</button>
   </div>
-
-  <div class="blk wd-blk" id="b-0715"><div class="bt c-blue">7:15–7:50</div><div class="bc"><div class="bt2">Shower + black coffee (IF fasting)</div><div class="bs">Eating opens at 1 PM. Prep tomorrow's gym bag.</div><span class="pill p-if">fasting</span></div></div>
-  <div class="blk wd-blk" id="b-0750"><div class="bt c-gold">7:50–9:00</div><div class="bc"><div class="bt2">efilingcheck — deep work #1</div><div class="bs">One written goal. Outreach, build, market.</div><span class="pill p-biz">business</span></div></div>
-  <div class="blk wd-blk" id="b-0900"><div class="bt c-purple">9:00–9:25</div><div class="bc"><div class="bt2">Study block #2 — revision sprint</div><div class="bs">Flashcards, mind maps. 25 sharp minutes.</div><span class="pill p-exam">exam</span></div></div>
-  <div class="blk wd-blk" id="b-0925"><div class="bt c-gray">9:25–9:30</div><div class="bc"><div class="bt2">Dress sharp</div><div class="bs">Clothes laid out last night. Look like you own things.</div><span class="pill p-mind">mindset</span></div></div>
-</div>
-
-<div class="dsec">
-  <div class="sec-lbl">Commute + DHC</div>
-  <div class="blk wd-blk" id="b-0930"><div class="bt c-dim">9:30–10:00</div><div class="bc"><div class="bt2">Commute — English podcast/audiobook</div><div class="bs">BBC Learning English or Business English Pod.</div><span class="pill p-growth">growth</span></div></div>
-  <div class="blk wd-blk" id="b-1000"><div class="bt c-dim">10 AM–1 PM</div><div class="bc"><div class="bt2">DHC work — first half</div><div class="bs">Most focused person in the room.</div><span class="pill p-income">income</span></div></div>
-  <div class="blk wd-blk" id="b-1300"><div class="bt c-gold">1:00–1:30</div><div class="bc"><div class="bt2">Break fast — 40g+ protein meal</div><div class="bs">Eating window opens. 15-min efilingcheck sprint after.</div><span class="pill p-if">IF break</span></div></div>
-  <div class="blk wd-blk" id="b-1330"><div class="bt c-dim">1:30–5:00</div><div class="bc"><div class="bt2">DHC work — second half</div><div class="bs">Champions don't coast. Finish strong.</div><span class="pill p-income">income</span></div></div>
-</div>
-
-<div class="dsec">
-  <div class="sec-lbl">Evening — empire hours</div>
-  <div class="blk wd-blk" id="b-1700"><div class="bt c-dim">5:00–6:00</div><div class="bc"><div class="bt2">Commute home — decompress</div><div class="bs">Audiobook. Arrive ready to build.</div><span class="pill p-growth">growth</span></div></div>
-  <div class="blk wd-blk" id="b-1800"><div class="bt c-gold">6:00–7:30</div><div class="bc"><div class="bt2">efilingcheck — prime 90-min session</div><div class="bs">Phone silent. Build what replaces your salary.</div><span class="pill p-biz">business</span></div></div>
-  <div class="blk wd-blk" id="b-1930"><div class="bt c-purple">7:30–8:00</div><div class="bc"><div class="bt2">Study block #3 + read 15 pages</div><div class="bs">Exam revision then book. Brain fed every day.</div><span class="pill p-brain">brain</span></div></div>
-  <div class="blk wd-blk" id="b-2000"><div class="bt c-pink">8:00–9:00</div><div class="bc"><div class="bt2">Family &amp; friends — full presence</div><div class="bs">Phone DOWN. This is what you are building for.</div><span class="pill p-fam">family</span></div></div>
-  <div class="blk wd-blk" id="b-2100"><div class="bt c-blue">9:00–9:20</div><div class="bc"><div class="bt2">Dinner — close IF window</div><div class="bs">High protein. Last meal of the day.</div><span class="pill p-if">IF closes</span></div></div>
-  <div class="blk wd-blk" id="b-2120"><div class="bt c-teal">9:20–9:40</div><div class="bc"><div class="bt2">CEO journal + plan tomorrow</div><div class="bs">3 wins. 3 tasks. Pack gym bag. Lay out clothes.</div><span class="pill p-mind">CEO mindset</span></div></div>
-  <div class="blk wd-blk" id="b-2140"><div class="bt c-gray">9:40–9:55</div><div class="bc"><div class="bt2">Wind down — read, zero screens</div><div class="bs">No social media. Feed your mind wisely.</div><span class="pill p-rest">rest</span></div></div>
-  <div class="blk wd-blk" id="b-2155"><div class="bt c-teal">9:55 PM</div><div class="bc"><div class="bt2">Lights out. 7 hrs strategic recovery.</div><div class="bs">Muscles grow. Brain consolidates. Non-negotiable.</div><span class="pill p-gym">sleep</span></div></div>
-</div>
-
-<div class="green-box"><strong>Run days (Tue/Thu/Sat):</strong> Replace 6:00–6:40 PM with running, then efilingcheck 6:40–7:30 PM.</div>
+  <div id="sch-wd">
+    <div class="info-box"><strong>Weekday rhythm.</strong> 1 hr continuous study (5–6 AM) · gym · 3 hrs continuous business (8–9 AM + 6–8 PM) · day job · family 8:30–9:30 PM. <span style="color:var(--gold-light);">Run days Tue/Thu/Sat:</span> run 6:00–6:40 PM, then business 6:40–8:00 PM.</div>
+    <div id="sch-wd-list"></div>
+  </div>
+  <div id="sch-we" class="hidden">
+    <div class="info-box"><strong>Weekend / holiday rhythm.</strong> Long run · ~6.5 hrs continuous business in two blocks (8:15–12 + 1–4 PM) · weekly review · extended family time. Toggle <em>Holiday</em> in the header to switch the whole app to this plan on any day off.</div>
+    <div id="sch-we-list"></div>
+  </div>
 </div><!-- end weekday -->
-
-<!-- ═══ SUNDAY / HOLIDAY ═══ -->
-<div id="view-sunday" class="hidden">
-<div class="info-box">Recovery + reflection day. Still disciplined. The CEO rests intentionally.</div>
-<div class="dsec">
-  <div class="sec-lbl">Morning</div>
-  <div class="blk hd-blk" id="h-0600"><div class="bt c-dark">6:00 AM</div><div class="bc"><div class="bt2">Wake up — natural, no later than 6</div><div class="bs">Cold water. Journal. Lazy Sunday = lazy Monday.</div><span class="pill p-mind">mindset</span></div></div>
-  <div class="blk hd-blk" id="h-0615"><div class="bt c-teal">6:15–7:30</div><div class="bc"><div class="bt2">Long run — marathon training</div><div class="bs">Longest run of week. Wk1–4: 4–5km. Wk5–8: 7–8km. Wk9–12: 10–12km.</div><span class="pill p-run">marathon</span></div></div>
-  <div class="blk hd-blk" id="h-0730"><div class="bt c-blue">7:30–8:15</div><div class="bc"><div class="bt2">Shower + light stretch</div><div class="bs">Foam roll. Black coffee. Eating window opens 12 PM.</div><span class="pill p-rec">recovery</span></div></div>
-</div>
-<div class="dsec">
-  <div class="sec-lbl">Late morning</div>
-  <div class="blk hd-blk" id="h-0815"><div class="bt c-purple">8:15–10:00</div><div class="bc"><div class="bt2">efilingcheck — weekly strategy session</div><div class="bs">Review metrics. Plan week goals. Think CEO.</div><span class="pill p-biz">business</span></div></div>
-  <div class="blk hd-blk" id="h-1000"><div class="bt c-dim">10–11 AM</div><div class="bc"><div class="bt2">Deep reading — 40 pages</div><div class="bs">Double your weekday reading. Your intellectual edge.</div><span class="pill p-brain">brain</span></div></div>
-  <div class="blk hd-blk" id="h-1100"><div class="bt c-purple">11 AM–12 PM</div><div class="bc"><div class="bt2">English practice — speaking + writing</div><div class="bs">TED Talk shadowing. Write 10 sentences.</div><span class="pill p-eng">english</span></div></div>
-</div>
-<div class="dsec">
-  <div class="sec-lbl">Afternoon</div>
-  <div class="blk hd-blk" id="h-1200"><div class="bt c-gold">12–1:30 PM</div><div class="bc"><div class="bt2">Break fast — big high-protein meal</div><div class="bs">Cook properly. Fuel the week ahead.</div><span class="pill p-if">IF break</span></div></div>
-  <div class="blk hd-blk" id="h-1330"><div class="bt c-dim">1:30–3:30</div><div class="bc"><div class="bt2">Free time — recharge deliberately</div><div class="bs">Walk, nap, explore. Protect recovery.</div><span class="pill p-rest">free time</span></div></div>
-  <div class="blk hd-blk" id="h-1530"><div class="bt c-teal">3:30–5:00</div><div class="bc"><div class="bt2">Weekly review + next week planning</div><div class="bs">Rate each goal 1–10. Plan top action per goal.</div><span class="pill p-mind">CEO review</span></div></div>
-</div>
-<div class="dsec">
-  <div class="sec-lbl">Evening</div>
-  <div class="blk hd-blk" id="h-1700"><div class="bt c-pink">5:00–7:30</div><div class="bc"><div class="bt2">Family &amp; friends — extended 2.5 hrs</div><div class="bs">Phone down. Fully present. The WHY behind the hustle.</div><span class="pill p-fam">family</span></div></div>
-  <div class="blk hd-blk" id="h-1930"><div class="bt c-purple">7:30–8:30</div><div class="bc"><div class="bt2">Study block — exam weekly recap</div><div class="bs">Review weak areas. Set targets for next week.</div><span class="pill p-exam">exam</span></div></div>
-  <div class="blk hd-blk" id="h-2030"><div class="bt c-gold">8:30–9:00</div><div class="bc"><div class="bt2">Dinner — close IF window</div><div class="bs">High protein. Eating closes at 9 PM.</div><span class="pill p-if">IF closes</span></div></div>
-  <div class="blk hd-blk" id="h-2100"><div class="bt c-teal">9:00–9:30</div><div class="bc"><div class="bt2">Prep for Monday — CEO mode on</div><div class="bs">Gym bag packed. Week goals written. Clothes ready.</div><span class="pill p-mind">prep</span></div></div>
-  <div class="blk hd-blk" id="h-2130"><div class="bt c-gray">9:30 PM</div><div class="bc"><div class="bt2">Lights out — 7.5 hrs full recovery</div><div class="bs">Most important sleep of the week. You earned it.</div><span class="pill p-rest">sleep</span></div></div>
-</div>
-</div><!-- end sunday -->
 
 <!-- ═══ GOALS ═══ -->
 <div id="view-goals" class="hidden">
-<div style="font-size:12px;color:var(--muted);margin-bottom:14px;line-height:1.5;">Your 6 targets. Read when you feel lost. This is why you wake up at 4:45 AM.</div>
-<div class="goal-card"><div class="goal-icon-row"><div class="goal-icon" style="background:#04342C;color:#9FE1CB;font-size:13px;font-weight:500;">DHC</div><div><div class="goal-main">Clear DHC Programmer exam</div><div class="goal-sub">Ready by 28 Aug 2026 · 72 study hours</div></div></div><div class="goal-body">1 hr study every weekday in two blocks. 3 hrs every Sunday. Phase 1: C, DSA, OS, DBMS (Jun 1–28). Phase 2: Networks, Web, Number Systems (Jun 29–Jul 19). Phase 3: Aptitude, English, GK (Jul 20–Aug 9). Phase 4: Mock tests + revision (Aug 10–28). Target: clear the exam and become permanent staff at DHC.</div></div>
-<div class="goal-card"><div class="goal-icon-row"><div class="goal-icon" style="background:#04342C;">💪</div><div><div class="goal-main">Physique in 3 months</div><div class="goal-sub">Phase 2 trainer program + IF 16:8</div></div></div><div class="goal-body">Gym 6x/week. Push/Pull/Legs split with abs after every session. Fasted training 6 AM. Break fast at 1 PM with 40g+ protein. Track weights inside the gym block. Progress photos every 2 weeks. Trust the program.</div></div>
-<div class="goal-card"><div class="goal-icon-row"><div class="goal-icon" style="background:#412402;">₹</div><div><div class="goal-main">efilingcheck: earn in 2 months</div><div class="goal-sub">Target: ₹20K+/month by week 8</div></div></div><div class="goal-body">Wk 1–4: Find 10 clients. Set up Razorpay. One clear offer. Wk 5–8: Close 3–5 paying clients. Referral engine. Wk 9–12: Scale to 10–20 clients. Systemise. Every session: does this action make money?</div></div>
-<div class="goal-card"><div class="goal-icon-row"><div class="goal-icon" style="background:#04342C;">🏃</div><div><div class="goal-main">Running — marathon path</div><div class="goal-sub">3x weekday + Sunday long run</div></div></div><div class="goal-body">Month 1: 3–4 km easy. Month 2: 5 km continuous. Month 3: 10 km race. Register a real 10K event now — a deadline you cannot negotiate with.</div></div>
-<div class="goal-card"><div class="goal-icon-row"><div class="goal-icon" style="background:#26215C;">🧠</div><div><div class="goal-main">CEO brain + confidence</div><div class="goal-sub">Read + journal + talk daily</div></div></div><div class="goal-body">20 pages/day = 3 books in 3 months. Month 1: 48 Laws of Power. Month 2: Think and Grow Rich. Month 3: Atomic Habits. CEO journal every night. Talk to 1 new person daily.</div></div>
-<div class="goal-card"><div class="goal-icon-row"><div class="goal-icon" style="background:#042C53;">🗣️</div><div><div class="goal-main">English + communication</div><div class="goal-sub">Daily shadowing + voice notes</div></div></div><div class="goal-body">60-sec English voice note every day. Shadow speakers you admire — copy their words and rhythm. Watch English content on commute. Month 3 goal: confident 10-min conversation with a stranger.</div></div>
-<div class="goal-card"><div class="goal-icon-row"><div class="goal-icon" style="background:#4B1528;">❤️</div><div><div class="goal-main">Family &amp; friends</div><div class="goal-sub">1 hr weekday + 2.5 hrs Sunday</div></div></div><div class="goal-body">8–9 PM every weekday is locked. Phone down, full presence. Extended 5–7:30 PM on Sundays. You are building this life FOR them. Never forget it.</div></div>
+<div style="font-size:12px;color:var(--muted);margin-bottom:8px;line-height:1.5;">Your 7 targets. Tap <strong style="color:var(--gold-light);font-weight:500;">Done today</strong> on each goal you kept. Keep the streak alive — miss a day and it resets.</div>
+<div id="goals-summary" style="margin-bottom:14px;"></div>
+<div id="goals-container"></div>
 <div style="margin-top:14px;background:rgba(239,159,39,0.07);border:1px solid rgba(239,159,39,0.18);border-radius:10px;padding:13px;">
   <div style="font-size:10px;font-weight:500;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px;">The one rule above all</div>
   <div style="font-size:12px;color:var(--muted);line-height:1.6;font-style:italic;">"The man who keeps his word to himself — especially when no one is watching — is the most dangerous, unstoppable kind of man alive."</div>
 </div>
+</div>
+
+<!-- ═══ STATS ═══ -->
+<div id="view-stats" class="hidden">
+  <div style="font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.5;">All your progress at a glance. Updates as you log streaks, weights and daily checks.</div>
+  <div id="stats-summary" style="margin-bottom:14px;"></div>
+  <table class="stats-table" id="stats-table"></table>
 </div>
 
 </div><!-- end wrap -->
@@ -938,7 +931,33 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer}
 
 <script>
 // ─── QUOTES ───
-const Q=["The man who controls his morning controls his destiny.","Discipline is doing what needs to be done even when you don't feel like it.","Weak men wait for motivation. Strong men create it.","Your future self is watching. Do not disappoint him.","Every rep, every page, every line of code compounds.","Abs are revealed in the kitchen. Build them in the gym.","efilingcheck doesn't build itself. You do.","Champions are made in the hours everyone else is sleeping.","Track your weights. If you don't track, you don't grow.","Progressive overload: slightly better than last week. Every week.","You are not tired. You are weak. Keep going.","Pain is temporary. Regret is forever. Choose the pain."];
+const Q=["The man who controls his morning controls his destiny.","Discipline is doing what needs to be done even when you don't feel like it.","Weak men wait for motivation. Strong men create it.","Your future self is watching. Do not disappoint him.","Every rep, every page, every line of code compounds.","Abs are revealed in the kitchen. Build them in the gym.","The business doesn't build itself. You do.","Champions are made in the hours everyone else is sleeping.","Track your weights. If you don't track, you don't grow.","Progressive overload: slightly better than last week. Every week.","You are not tired. You are weak. Keep going.","Pain is temporary. Regret is forever. Choose the pain."];
+
+// ─── PROGRAM DAY ANCHOR (Day 1 = the Monday of the week you first open the app) ───
+function _localDayStr(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function getStartDate(){
+  // stored in the unified DB (with one-time migration from the legacy key)
+  let saved=DB.get('start', null);
+  if(!saved){ try{ saved=localStorage.getItem('ceo_start'); }catch(e){} }
+  if(saved){ if(DB.get('start',null)!==saved) DB.set('start',saved); return new Date(saved+'T00:00:00'); }
+  // First launch: anchor Day 1 to the Monday of the current week.
+  const now=new Date(); now.setHours(0,0,0,0);
+  const dow=now.getDay();                 // 0=Sun..6=Sat
+  const offset=(dow===0)?-6:(1-dow);      // shift back to this week's Monday
+  const monday=new Date(now); monday.setDate(now.getDate()+offset);
+  const s=_localDayStr(monday);
+  DB.set('start', s);
+  return new Date(s+'T00:00:00');
+}
+// 1-based program day number (Day 1 = start Monday). Clamps at >=1.
+function getDayNum(){
+  const start=getStartDate();
+  const now=new Date(); now.setHours(0,0,0,0);
+  const diff=Math.floor((now-start)/86400000);
+  return diff+1; // start day = Day 1
+}
+// Fitness phase: 1 for days 1–7 (foundation week), 2 from day 8 onward.
+function getFitnessPhase(){ return getDayNum()<=7 ? 1 : 2; }
 
 // ─── WORKOUT DATA ───
 const PUSH_EX = [
@@ -988,11 +1007,48 @@ const DOW_EX    = [null, PUSH_EX, PULL_EX, LEGS_EX, PUSH_EX, PULL_EX, LEGS_EX];
 const DOW_COLOR = ['var(--muted)','var(--gold)','var(--blue-light)','var(--purple-light)','var(--gold)','var(--blue-light)','var(--purple-light)'];
 const DOW_BG    = ['var(--bg3)','rgba(239,159,39,0.12)','rgba(55,138,221,0.12)','rgba(127,119,221,0.12)','rgba(239,159,39,0.12)','rgba(55,138,221,0.12)','rgba(127,119,221,0.12)'];
 
+// ─── PHASE 1 DATA (Week 1 — Foundation · same full-body workout every day) ───
+const P1_EX = [
+  {n:'Incline Dumbbell Press', sets:3, reps:'12–15', target:'Chest'},
+  {n:'Pec Deck Fly',           sets:3, reps:'12–15', target:'Chest'},
+  {n:'Lat Pulldown',           sets:3, reps:'12–15', target:'Back'},
+  {n:'Face Pulls',             sets:3, reps:'15–20', target:'Rear Delts / Upper Back'},
+  {n:'Leg Extension',          sets:3, reps:'12–15', target:'Quads'},
+  {n:'Leg Curl',               sets:3, reps:'12–15', target:'Hamstrings'},
+  {n:'Calf Raises',            sets:3, reps:'15–20', target:'Calves'},
+  {n:'Lateral Delt Raises',    sets:3, reps:'12–15', target:'Shoulders'},
+  {n:'Plank',                  sets:3, reps:'30–60s', target:'Core'},
+  {n:'Cardio (moderate)',      sets:1, reps:'10–15 min', target:'Conditioning'}
+];
+const P1_EX_NAMES = P1_EX.filter(e=>e.n!=='Plank'&&!e.n.startsWith('Cardio')).map(e=>e.n);
+// Phase 1 clean-eating: EAT vs CUT (no macros, no IF this week)
+const P1_EAT = [
+  ['Proteins','Eggs, chicken, fish, paneer, dal, curd, milk'],
+  ['Carbs','Roti, rice, oats, poha, upma, sweet potato'],
+  ['Vegetables','Sabji, salads, any vegetables you like'],
+  ['Healthy fats','Ghee, nuts, seeds, coconut'],
+  ['Fruits','Any fresh fruit (limit 2/day)']
+];
+const P1_CUT = [
+  ['Sugar','Mithai, sweets, chocolate, biscuits, ladoo, barfi'],
+  ['Sugary drinks','Cold drinks, energy drinks, packaged juice, sweet chai'],
+  ['Junk food','Pizza, burger, samosa, pakora, chips, namkeen, momos'],
+  ['Maida','Naan, white bread, biscuits, cakes, pastries'],
+  ['Alcohol','Beer, whiskey, wine — zero tolerance']
+];
+const P1_SUPPS = [
+  ['Whey Protein','1 scoop (25–30g)','Post workout — only if short on protein'],
+  ['Creatine Monohydrate','5g','Post workout — most researched, safe'],
+  ['Multivitamin','1 serving','With breakfast — basic insurance'],
+  ['Fish Oil','1000mg','With breakfast — omega-3s'],
+  ['Vitamin D3 + K2','5000 IU D3','With a meal — most Indians deficient']
+];
+
 // ─── WEIGHT TRACKER STATE ───
 let activeWk = {push:1, pull:1, legs:1};
 
-function wKey(type,wk){ return `ceo_w_${type}_${wk}`; }
-function loadW(type,wk){ try{const d=localStorage.getItem(wKey(type,wk));return d?JSON.parse(d):{}}catch(e){return {};} }
+// shares the same DB 'weights' namespace as the Fitness-tab tracker
+function loadW(type,wk){ return DB.getIn(['weights',type,wk], {}); }
 
 function renderTrackerInputs(type,wk,containerSuffix){
   const exs = type==='push'?PUSH_EX:type==='pull'?PULL_EX:LEGS_EX;
@@ -1020,12 +1076,21 @@ function saveWeights(type,sfx){
     const el=document.getElementById(`wi_${type}_${wk}_${i}_${sfx}`);
     if(el&&el.value)data[ex.n]=parseFloat(el.value);
   });
-  try{localStorage.setItem(wKey(type,wk),JSON.stringify(data));}catch(e){}
+  setWeight(type,wk,data);
   const msg=document.getElementById(`saved-${type}-${sfx}`);
   msg.style.display='block';setTimeout(()=>msg.style.display='none',2000);
 }
 
 function buildWorkoutPanel(dow, containerSuffix){
+  // PHASE 1 — same full-body workout every training day, Sunday rest
+  if(getFitnessPhase()===1){
+    if(dow===0) return `<div style="font-size:13px;color:var(--muted);padding:8px 0;">Rest day (Day 7) — no workout. Take your Day 7 photo + weigh-in. Phase 2 unlocks tomorrow.</div>`;
+    let rows=P1_EX.map((e,i)=>`<tr><td><span class="ex-num">${i+1}</span><span class="ex-name">${e.n}</span><br><span class="ex-target">${e.target}</span></td><td>${e.sets}</td><td>${e.reps}</td></tr>`).join('');
+    return `<div style="font-size:12px;font-weight:500;color:var(--gold-light);margin-bottom:8px;text-transform:uppercase;letter-spacing:.07em;">Phase 1 · Full Body — same routine daily</div>`
+      +`<table class="ex-table"><thead><tr><th>#&nbsp;Exercise</th><th>Sets</th><th>Reps</th></tr></thead><tbody>${rows}</tbody></table>`
+      +`<div class="cardio-note"><strong>Form &gt; everything.</strong> Light–moderate weight, controlled reps, 60–90s rest. Learn the movements this week — heavy lifting starts in Phase 2.</div>`;
+  }
+
   const type=DOW_TYPE[dow];
   const exs=DOW_EX[dow];
   const absDay=ABS_DAYS[dow];
@@ -1103,61 +1168,64 @@ function toggleGymPanel(sfx){
   }
 }
 
+// Phase-aware "today's workout" badge text (shared by both badge renderers)
+function gymBadgeHTML(){
+  const dow=new Date().getDay();
+  if(getFitnessPhase()===1){
+    if(dow===0) return `<span style="font-size:10px;color:var(--muted);background:var(--bg3);border:1px solid var(--border);padding:2px 8px;border-radius:20px;">Rest day (Phase 1 · Day 7)</span>`;
+    return `<span style="font-size:10px;font-weight:500;background:rgba(239,159,39,0.12);border:1px solid var(--gold);color:var(--gold);padding:2px 8px;border-radius:20px;">Today: Full Body (Phase 1 · Day ${getDayNum()})</span>`;
+  }
+  const type=DOW_TYPE[dow],col=DOW_COLOR[dow],bg=DOW_BG[dow],label=DOW_LABEL[dow];
+  if(type==='rest') return `<span style="font-size:10px;color:var(--muted);background:var(--bg3);border:1px solid var(--border);padding:2px 8px;border-radius:20px;">Rest day today</span>`;
+  const muscles=type==='push'?'Chest · Shoulders · Triceps':type==='pull'?'Back · Biceps · Rear Delts · Traps':'Quads · Hamstrings · Glutes · Calves';
+  return `<span style="font-size:10px;font-weight:500;background:${bg};border:1px solid ${col};color:${col};padding:2px 8px;border-radius:20px;">Today: ${label} — ${muscles}</span>`;
+}
 // Render today badge on gym block
 function renderGymBadge(){
-  const dow=new Date().getDay();
-  const type=DOW_TYPE[dow];
-  const col=DOW_COLOR[dow];
-  const bg=DOW_BG[dow];
-  const label=DOW_LABEL[dow];
   const badge=document.getElementById('gym-today-badge');
-  if(!badge)return;
-  if(type==='rest'){
-    badge.innerHTML=`<span style="font-size:10px;color:var(--muted);background:var(--bg3);border:1px solid var(--border);padding:2px 8px;border-radius:20px;">Rest day today</span>`;
-  } else {
-    const muscles=type==='push'?'Chest · Shoulders · Triceps':type==='pull'?'Back · Biceps · Rear Delts · Traps':'Quads · Hamstrings · Glutes · Calves';
-    badge.innerHTML=`<span style="font-size:10px;font-weight:500;background:${bg};border:1px solid ${col};color:${col};padding:2px 8px;border-radius:20px;">Today: ${label} — ${muscles}</span>`;
-  }
+  if(badge) badge.innerHTML=gymBadgeHTML();
 }
 
 // ─── SCHEDULE DATA ───
+// Weekday: 1 continuous study hr (5–6 AM) · 2–3 continuous business hrs (morning 2h + evening 2h)
 const WDS=[
-  {id:'b-0445',s:'04:45',e:'05:00',title:'Wake up — cold water, journal intention',desc:'Write "Today I will..." Zero phone first hour.',tag:'mindset',tc:'p-mind'},
-  {id:'b-0500',s:'05:00',e:'05:55',title:'Study block #1 — peak brain time',desc:'50-min Pomodoro. Past papers, practice problems, concepts.',tag:'exam',tc:'p-exam'},
-  {id:'b-0555',s:'05:55',e:'06:00',title:'Gear up — leave for gym',desc:'Bag packed last night. Black coffee. Walk out ready.',tag:'prep',tc:'p-mind'},
-  {id:'b-0600',s:'06:00',e:'07:15',title:'GYM — lifts + abs + 15–20 min LISS',desc:'Follow trainer program. Log every set. Abs after lifts. LISS cardio last.',tag:'body',tc:'p-gym'},
-  {id:'b-0715',s:'07:15',e:'07:50',title:'Shower + black coffee (IF fasting)',desc:'Eating window opens at 1 PM. Prep tomorrow\'s gym bag.',tag:'fasting',tc:'p-if'},
-  {id:'b-0750',s:'07:50',e:'09:00',title:'efilingcheck — deep work #1',desc:'Write one goal. Outreach, build, or market.',tag:'business',tc:'p-biz'},
-  {id:'b-0900',s:'09:00',e:'09:25',title:'Study block #2 — revision sprint',desc:'Flashcards, mind maps. 25 focused minutes.',tag:'exam',tc:'p-exam'},
-  {id:'b-0925',s:'09:25',e:'09:30',title:'Dress sharp',desc:'Clothes laid out last night. Look like you own things.',tag:'mindset',tc:'p-mind'},
-  {id:'b-0930',s:'09:30',e:'10:00',title:'Commute — English podcast/audiobook',desc:'BBC Learning English. 30 min = 180 hrs/year free.',tag:'growth',tc:'p-growth'},
-  {id:'b-1000',s:'10:00',e:'13:00',title:'DHC work — first half',desc:'Most focused person in the room.',tag:'income',tc:'p-income'},
-  {id:'b-1300',s:'13:00',e:'13:30',title:'Break fast — 40g+ protein meal',desc:'Eating window opens. 15-min efilingcheck sprint after.',tag:'IF break',tc:'p-if'},
-  {id:'b-1330',s:'13:30',e:'17:00',title:'DHC work — second half',desc:'Champions don\'t coast. Finish as strong as you started.',tag:'income',tc:'p-income'},
-  {id:'b-1700',s:'17:00',e:'18:00',title:'Commute home — decompress and reload',desc:'Audiobook. Arrive ready to build.',tag:'growth',tc:'p-growth'},
-  {id:'b-1800',s:'18:00',e:'19:30',title:'efilingcheck — prime 90-min session',desc:'Phone silent. Build what replaces your salary.',tag:'business',tc:'p-biz'},
-  {id:'b-1930',s:'19:30',e:'20:00',title:'Study block #3 + read 15 pages',desc:'Exam revision then book. Brain fed every day.',tag:'brain',tc:'p-brain'},
-  {id:'b-2000',s:'20:00',e:'21:00',title:'Family & friends — full presence',desc:'Phone DOWN. This is what you are building for.',tag:'family',tc:'p-fam'},
-  {id:'b-2100',s:'21:00',e:'21:20',title:'Dinner — close IF window',desc:'High protein. Last meal. Eating closes here.',tag:'IF closes',tc:'p-if'},
-  {id:'b-2120',s:'21:20',e:'21:40',title:'CEO journal + plan tomorrow',desc:'3 wins. 3 tasks. Pack gym bag. Zero morning decisions.',tag:'CEO mindset',tc:'p-mind'},
-  {id:'b-2140',s:'21:40',e:'21:55',title:'Wind down — read, zero screens',desc:'No social media before sleep.',tag:'rest',tc:'p-rest'},
-  {id:'b-2155',s:'21:55',e:'04:45',title:'Lights out — 7 hours strategic recovery',desc:'Muscles grow. Brain consolidates. Non-negotiable.',tag:'sleep',tc:'p-gym'}
+  {id:'b-0445',s:'04:45',e:'05:00',title:'Wake up — cold water, journal intention',desc:'Write "Today I will..." Zero phone the first hour.',tag:'mindset',tc:'p-mind'},
+  {id:'b-0500',s:'05:00',e:'06:00',title:'Study block — 1 hour continuous (peak brain)',desc:'One unbroken hour. Today\'s topic from the Study tab. No phone, no breaks.',tag:'exam',tc:'p-exam'},
+  {id:'b-0600',s:'06:00',e:'06:10',title:'Gear up — leave for gym',desc:'Bag packed last night. Black coffee. Walk out ready.',tag:'prep',tc:'p-mind'},
+  {id:'b-0610',s:'06:10',e:'07:30',title:'GYM — warm-up + lifts + abs + LISS',desc:'Follow Phase 2 program. Log every set. Abs after lifts. 15–20 min LISS last.',tag:'body',tc:'p-gym',
+    p1title:'GYM — full-body workout (Phase 1)',p1desc:'Same full-body routine daily. Learn the form, light weights, finish with 10–15 min cardio.'},
+  {id:'b-0730',s:'07:30',e:'08:00',title:'Shower + black coffee (still fasting)',desc:'Eating window opens at 12 PM. Prep tomorrow\'s gym bag.',tag:'fasting',tc:'p-if',
+    p1title:'Shower + breakfast — clean & simple',p1desc:'No fasting this week. Eat a normal clean breakfast (eggs/paneer/oats). Prep tomorrow\'s gym bag.',p1tag:'breakfast'},
+  {id:'b-0800',s:'08:00',e:'09:00',title:'Business — 1 hr continuous deep work',desc:'One written outcome. Build / outreach / market. Phone silent the whole hour.',tag:'business',tc:'p-biz'},
+  {id:'b-0900',s:'09:00',e:'09:30',title:'Commute — English podcast / audiobook',desc:'BBC Learning English or Business English Pod. Dress sharp before leaving.',tag:'growth',tc:'p-growth'},
+  {id:'b-0930',s:'09:30',e:'12:00',title:'DHC work — first half',desc:'Most focused person in the room.',tag:'income',tc:'p-income'},
+  {id:'b-1200',s:'12:00',e:'12:30',title:'Break fast — 40g+ protein meal',desc:'Eating window opens (12 PM). Hit protein first.',tag:'IF break',tc:'p-if',
+    p1title:'Lunch — clean home-cooked meal',p1desc:'Eat when hungry — no window this week. Protein + carbs + veg. No junk, no sugar, no fried food.',p1tag:'lunch'},
+  {id:'b-1230',s:'12:30',e:'17:00',title:'DHC work — second half',desc:'Champions don\'t coast. Finish as strong as you started.',tag:'income',tc:'p-income'},
+  {id:'b-1700',s:'17:00',e:'17:45',title:'Commute home — decompress',desc:'Audiobook. Arrive ready to build.',tag:'growth',tc:'p-growth'},
+  {id:'b-1745',s:'17:45',e:'18:00',title:'Reset — change, water, quick plan',desc:'Decide the ONE business outcome for tonight\'s block.',tag:'prep',tc:'p-mind'},
+  {id:'b-1800',s:'18:00',e:'20:00',title:'Business — 2 hr continuous prime session',desc:'The block that replaces your salary. (Run days Tue/Thu/Sat: run 6:00–6:40, business 6:40–8:00.)',tag:'business',tc:'p-biz'},
+  {id:'b-2000',s:'20:00',e:'20:30',title:'Dinner — close IF window',desc:'High protein. Last meal. Eating window closes at 8 PM.',tag:'IF closes',tc:'p-if',
+    p1title:'Dinner — clean & home-cooked',p1desc:'No window to close this week. Eat a normal clean dinner. Just no junk, sugar or alcohol.',p1tag:'dinner'},
+  {id:'b-2030',s:'20:30',e:'21:30',title:'Family & friends — full presence',desc:'Phone DOWN. This is what you are building for.',tag:'family',tc:'p-fam'},
+  {id:'b-2130',s:'21:30',e:'21:50',title:'Read 15 pages + CEO journal',desc:'Feed the brain. 3 wins, 3 tasks for tomorrow. Pack gym bag, lay out clothes.',tag:'brain',tc:'p-brain'},
+  {id:'b-2150',s:'21:50',e:'22:00',title:'Wind down — zero screens',desc:'No social media before sleep.',tag:'rest',tc:'p-rest'},
+  {id:'b-2200',s:'22:00',e:'04:45',title:'Lights out — ~6.75 hrs recovery',desc:'Muscles grow. Brain consolidates. Non-negotiable.',tag:'sleep',tc:'p-gym'}
 ];
+// Weekend/Holiday: ~6.5 hrs business in 2 continuous blocks · long run · family preserved
 const HDS=[
-  {id:'h-0600',s:'06:00',e:'06:15',title:'Wake up — natural, no later than 6',desc:'Cold water. Journal. Lazy Sunday = lazy Monday.',tag:'mindset',tc:'p-mind'},
-  {id:'h-0615',s:'06:15',e:'07:30',title:'Long run — marathon training',desc:'Longest run of week. Build distance weekly.',tag:'marathon',tc:'p-run'},
-  {id:'h-0730',s:'07:30',e:'08:15',title:'Shower + light stretch',desc:'Foam roll. Black coffee. Eating window opens 12 PM.',tag:'recovery',tc:'p-rec'},
-  {id:'h-0815',s:'08:15',e:'10:00',title:'efilingcheck — weekly strategy session',desc:'Review metrics. Plan week. Think CEO.',tag:'business',tc:'p-biz'},
-  {id:'h-1000',s:'10:00',e:'11:00',title:'Deep reading — 40 pages',desc:'Double weekday reading. Your intellectual edge.',tag:'brain',tc:'p-brain'},
-  {id:'h-1100',s:'11:00',e:'12:00',title:'English practice — speaking + writing',desc:'TED Talk shadowing. Write 10 sentences.',tag:'english',tc:'p-eng'},
-  {id:'h-1200',s:'12:00',e:'13:30',title:'Break fast — big high-protein meal',desc:'Eating window opens. Cook properly. Fuel the week.',tag:'IF break',tc:'p-if'},
-  {id:'h-1330',s:'13:30',e:'15:30',title:'Free time — recharge deliberately',desc:'Walk, nap, explore. Rest is part of the plan.',tag:'free time',tc:'p-rest'},
-  {id:'h-1530',s:'15:30',e:'17:00',title:'Weekly review + next week planning',desc:'Rate each goal 1–10. Top action per goal.',tag:'CEO review',tc:'p-mind'},
+  {id:'h-0600',s:'06:00',e:'06:15',title:'Wake up — natural, no later than 6',desc:'Cold water. Journal. Lazy weekend = lazy Monday.',tag:'mindset',tc:'p-mind'},
+  {id:'h-0615',s:'06:15',e:'07:30',title:'Long run — marathon training',desc:'Longest run of the week. Build distance weekly.',tag:'marathon',tc:'p-run'},
+  {id:'h-0730',s:'07:30',e:'08:15',title:'Shower + foam roll + light stretch',desc:'Black coffee. Still fasting — eating window opens 12 PM.',tag:'recovery',tc:'p-rec'},
+  {id:'h-0815',s:'08:15',e:'12:00',title:'Business — block 1 (3 hr 45 min continuous)',desc:'Deepest work of the week. Strategy + build. One big outcome. Phone silent.',tag:'business',tc:'p-biz'},
+  {id:'h-1200',s:'12:00',e:'13:00',title:'Break fast — big high-protein meal',desc:'Eating window opens. Cook properly. Hit 40g+ protein.',tag:'IF break',tc:'p-if'},
+  {id:'h-1300',s:'13:00',e:'16:00',title:'Business — block 2 (3 hr continuous)',desc:'Ship it. Total ~6.5 hrs business today. This is how you win the week.',tag:'business',tc:'p-biz'},
+  {id:'h-1600',s:'16:00',e:'17:00',title:'Weekly review + next-week planning',desc:'Rate each goal 1–10. Top action per goal. Plan the study + business week.',tag:'CEO review',tc:'p-mind'},
   {id:'h-1700',s:'17:00',e:'19:30',title:'Family & friends — extended 2.5 hrs',desc:'Phone down. Fully present. The WHY behind the hustle.',tag:'family',tc:'p-fam'},
-  {id:'h-1930',s:'19:30',e:'20:30',title:'Study block — exam weekly recap',desc:'Review weak areas. Set next week targets.',tag:'exam',tc:'p-exam'},
-  {id:'h-2030',s:'20:30',e:'21:00',title:'Dinner — close IF window',desc:'High protein. Eating closes at 9 PM.',tag:'IF closes',tc:'p-if'},
-  {id:'h-2100',s:'21:00',e:'21:30',title:'Prep for Monday — CEO mode on',desc:'Gym bag. Week goals written. Clothes ready.',tag:'prep',tc:'p-mind'},
-  {id:'h-2130',s:'21:30',e:'06:00',title:'Lights out — 7.5 hrs full recovery',desc:'Sunday sleep is the most important of the week.',tag:'sleep',tc:'p-rest'}
+  {id:'h-1930',s:'19:30',e:'20:30',title:'Study — weekly recap + mock review',desc:'Review weak areas. On mock weeks: do the full timed mock (see Study tab).',tag:'exam',tc:'p-exam'},
+  {id:'h-2030',s:'20:30',e:'21:00',title:'Dinner — close IF window',desc:'High protein. Eating window closes at 8 PM.',tag:'IF closes',tc:'p-if'},
+  {id:'h-2100',s:'21:00',e:'21:30',title:'Deep reading — 30 pages + prep tomorrow',desc:'Double the weekday reading. Lay out clothes, pack bag.',tag:'brain',tc:'p-brain'},
+  {id:'h-2130',s:'21:30',e:'06:00',title:'Lights out — 8.5 hrs full recovery',desc:'Weekend sleep rebuilds you for the week. You earned it.',tag:'rest',tc:'p-rest'}
 ];
 
 function toM(t){const[h,m]=t.split(':').map(Number);return h*60+m;}
@@ -1168,6 +1236,29 @@ function getBlock(sc,nm){
     if(e>s){if(nm>=s&&nm<e)return{b,s,e};}
     else{if(nm>=s||nm<e)return{b,s,e:e+1440};}
   }return null;
+}
+
+// The overnight "lights out" block crosses midnight into tomorrow, which may be a
+// different day-type. Its wake time should match TOMORROW's schedule, not today's.
+const WEEKDAY_WAKE='04:45';   // Mon–Sat
+const WEEKEND_WAKE='06:00';   // Sun / holiday
+function tomorrowIsWeekend(){ return (new Date().getDay()+1)%7 === 0; } // tomorrow == Sunday
+function tomorrowWake(){ return tomorrowIsWeekend()?WEEKEND_WAKE:WEEKDAY_WAKE; }
+// Is this block the overnight wrap-around (start time > end time)?
+function isSleepBlock(b){ return toM(b.e) <= toM(b.s); }
+// Returns sleep-block fields (end/title/desc) corrected for tomorrow's wake time.
+function sleepView(b){
+  const wake=tomorrowWake();
+  const startM=toM(b.s), wakeM=toM(wake);
+  let mins=wakeM - startM; if(mins<=0) mins+=1440;
+  const hrs=(mins/60);
+  const hrsTxt = (hrs%1===0)? hrs+'' : hrs.toFixed(2).replace(/0$/,'').replace(/\.$/,'');
+  const wakeWord = tomorrowIsWeekend() ? 'weekend' : 'weekday';
+  return {
+    e: wake,
+    title: `Lights out — wake ${fmtT(wakeM)} (${hrsTxt} hrs)`,
+    desc: `Tomorrow is a ${wakeWord}. Sleep now, rise at ${fmtT(wakeM)}. Recovery is non-negotiable.`
+  };
 }
 
 // ─── HOLIDAY STATE ───
@@ -1197,19 +1288,37 @@ function updateModeUI(){
 // ─── TODAY TAB ───
 const BG_MAP={'p-mind':'c-dark','p-exam':'c-purple','p-gym':'c-teal','p-biz':'c-gold','p-if':'c-gold','p-income':'c-dim','p-growth':'c-dim','p-run':'c-teal','p-brain':'c-purple','p-fam':'c-pink','p-rest':'c-gray','p-rec':'c-blue','p-eng':'c-blue'};
 
+// Phase-aware block view. In LIVE views (Today tab + Now card) the overnight sleep
+// block is corrected so its wake time matches TOMORROW's schedule (e.g. Sunday night
+// → wake 4:45 for Monday). The Schedule tab is a static reference, so pass live=false
+// there to keep each schedule's own native wake time.
+function blockView(b, sched, live){
+  if(live!==false && isSleepBlock(b)){
+    const sv=sleepView(b);
+    return {title:sv.title, desc:sv.desc, tag:b.tag, eRaw:sv.e};
+  }
+  if(sched===HDS) return {title:b.title,desc:b.desc,tag:b.tag,eRaw:b.e}; // weekend unaffected
+  if(getFitnessPhase()===1 && (b.p1title||b.p1desc)){
+    return {title:b.p1title||b.title, desc:b.p1desc||b.desc, tag:b.p1tag||b.tag, eRaw:b.e};
+  }
+  return {title:b.title,desc:b.desc,tag:b.tag,eRaw:b.e};
+}
+
 function renderToday(){
   const sc=isHoliday?HDS:WDS;
-  let h=`<div style="font-size:12px;color:var(--muted);margin-bottom:10px;">${isHoliday?'Sunday / Holiday — recovery + reflection day.':'Your full weekday battle plan.'}</div>`;
+  let h=`<div style="font-size:12px;color:var(--muted);margin-bottom:10px;">${isHoliday?'Weekend / Holiday — long run, deep business work, family.':'Your full weekday battle plan.'}</div>`;
   sc.forEach(b=>{
     const bg=BG_MAP[b.tc]||'c-dim';
+    const v=blockView(b,sc);
     // For gym block in Today tab, add the same expandable workout
-    if(b.id==='b-0600' && !isHoliday){
+    const eDisp=v.eRaw||b.e;
+    if(b.id==='b-0610' && !isHoliday){
       h+=`<div class="blk today-blk" id="t-${b.id}">
-        <div class="bt ${bg}" style="min-width:80px;">${b.s}–${b.e}</div>
+        <div class="bt ${bg}" style="min-width:80px;">${b.s}–${eDisp}</div>
         <div class="bc">
-          <div class="bt2">${b.title}</div>
-          <div class="bs">${b.desc}</div>
-          <span class="pill ${b.tc}">${b.tag}</span>
+          <div class="bt2">${v.title}</div>
+          <div class="bs">${v.desc}</div>
+          <span class="pill ${b.tc}">${v.tag}</span>
           <div id="gym-today-badge-t" style="margin-top:6px;"></div>
           <button class="gym-expand-btn" onclick="toggleGymPanel('td')" id="gym-btn-td">
             <span>View today's workout</span> <span class="chev-sm" id="gym-chev-td">▼</span>
@@ -1218,7 +1327,7 @@ function renderToday(){
         </div>
       </div>`;
     } else {
-      h+=`<div class="blk today-blk" id="t-${b.id}"><div class="bt ${bg}" style="min-width:80px;">${b.s}–${b.e}</div><div class="bc"><div class="bt2">${b.title}</div><div class="bs">${b.desc}</div><span class="pill ${b.tc}">${b.tag}</span></div></div>`;
+      h+=`<div class="blk today-blk" id="t-${b.id}"><div class="bt ${bg}" style="min-width:80px;">${b.s}–${eDisp}</div><div class="bc"><div class="bt2">${v.title}</div><div class="bs">${v.desc}</div><span class="pill ${b.tc}">${v.tag}</span></div></div>`;
     }
   });
   document.getElementById('today-container').innerHTML=h;
@@ -1228,18 +1337,113 @@ function renderToday(){
 
 function renderGymBadgeIn(id){
   const el=document.getElementById(id);
-  if(!el)return;
-  const dow=new Date().getDay();
-  const type=DOW_TYPE[dow];
-  const col=DOW_COLOR[dow];
-  const bg=DOW_BG[dow];
-  const label=DOW_LABEL[dow];
-  if(type==='rest'){
-    el.innerHTML=`<span style="font-size:10px;color:var(--muted);background:var(--bg3);border:1px solid var(--border);padding:2px 8px;border-radius:20px;">Rest day today</span>`;
-  } else {
-    const muscles=type==='push'?'Chest · Shoulders · Triceps':type==='pull'?'Back · Biceps · Rear Delts · Traps':'Quads · Hamstrings · Glutes · Calves';
-    el.innerHTML=`<span style="font-size:10px;font-weight:500;background:${bg};border:1px solid ${col};color:${col};padding:2px 8px;border-radius:20px;">Today: ${label} — ${muscles}</span>`;
+  if(el) el.innerHTML=gymBadgeHTML();
+}
+
+// ─── NOTIFICATION ENGINE ───
+let notifEnabled=false;
+try{ notifEnabled=localStorage.getItem('ceo_notif')==='true'; }catch(e){}
+let _lastBlockId=null;        // track block transitions
+let _alertTimer=null;
+let _audioCtx=null;
+
+function updateNotifUI(){
+  const sw=document.getElementById('nsw'), lbl=document.getElementById('nlbl');
+  if(!sw) return;
+  sw.classList.toggle('on',notifEnabled);
+  lbl.textContent = notifEnabled ? '🔔 Alerts on' : '🔔 Alerts off';
+}
+
+function toggleNotif(){
+  notifEnabled=!notifEnabled;
+  try{ localStorage.setItem('ceo_notif',String(notifEnabled)); }catch(e){}
+  if(notifEnabled){
+    // unlock audio on the user gesture so beeps work later
+    try{ _audioCtx=_audioCtx||new (window.AudioContext||window.webkitAudioContext)(); if(_audioCtx.state==='suspended')_audioCtx.resume(); }catch(e){}
+    if('Notification' in window && Notification.permission==='default'){ Notification.requestPermission(); }
+    // confirmation alert so the user knows it works
+    fireAlert('🔔 Alerts are ON','You\'ll get a banner + sound when each block starts (while the app is open). For lock-screen reminders, tap "Add to iPhone Calendar" in the Today tab.');
   }
+  updateNotifUI();
+}
+
+function beep(){
+  try{
+    _audioCtx=_audioCtx||new (window.AudioContext||window.webkitAudioContext)();
+    if(_audioCtx.state==='suspended')_audioCtx.resume();
+    const t=_audioCtx.currentTime;
+    [0,0.18].forEach(off=>{
+      const o=_audioCtx.createOscillator(),g=_audioCtx.createGain();
+      o.type='sine'; o.frequency.value=880;
+      g.gain.setValueAtTime(0.001,t+off);
+      g.gain.exponentialRampToValueAtTime(0.25,t+off+0.02);
+      g.gain.exponentialRampToValueAtTime(0.001,t+off+0.15);
+      o.connect(g); g.connect(_audioCtx.destination);
+      o.start(t+off); o.stop(t+off+0.16);
+    });
+  }catch(e){}
+}
+
+function fireAlert(title,desc){
+  const ban=document.getElementById('alertBanner');
+  document.getElementById('alertTitle').textContent=title;
+  document.getElementById('alertDesc').textContent=desc;
+  ban.classList.toggle('hm',isHoliday);
+  ban.classList.add('show');
+  beep();
+  if(navigator.vibrate) try{ navigator.vibrate([200,80,200]); }catch(e){}
+  // OS-level notification if the app is backgrounded and permission granted
+  if('Notification' in window && Notification.permission==='granted'){
+    try{ new Notification(title,{body:desc,tag:'ceo-block'}); }catch(e){}
+  }
+  clearTimeout(_alertTimer);
+  _alertTimer=setTimeout(dismissAlert,30000); // auto-hide after 30s
+}
+function dismissAlert(){ document.getElementById('alertBanner').classList.remove('show'); }
+
+// Called from tick() whenever the active block changes
+function onBlockChange(b){
+  if(!notifEnabled) return;
+  fireAlert('Now: '+b.title, b.desc);
+}
+
+// ─── CALENDAR (.ics) EXPORT — real iOS lock-screen reminders ───
+function pad2(n){ return String(n).padStart(2,'0'); }
+function buildICS(){
+  // Generate recurring daily events for every weekday block + every weekend block.
+  // Weekday blocks recur Mon–Sat; weekend blocks recur Sun (and any manual holiday).
+  const dtStamp=new Date().toISOString().replace(/[-:]/g,'').split('.')[0]+'Z';
+  let ics='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//CEO Mode//Schedule//EN\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\n';
+  // Use the next occurrence date as a seed; RRULE handles repetition.
+  const seed=new Date(); seed.setHours(0,0,0,0);
+  function ymd(d){ return d.getFullYear()+pad2(d.getMonth()+1)+pad2(d.getDate()); }
+  function evt(b,byday,uidSfx){
+    const [sh,sm]=b.s.split(':').map(Number);
+    const dt=ymd(seed)+'T'+pad2(sh)+pad2(sm)+'00';
+    return 'BEGIN:VEVENT\r\n'
+      +'UID:ceo-'+b.id+'-'+uidSfx+'@ceomode\r\n'
+      +'DTSTAMP:'+dtStamp+'\r\n'
+      +'DTSTART;TZID=Asia/Kolkata:'+dt+'\r\n'
+      +'DURATION:PT5M\r\n'
+      +'RRULE:FREQ=WEEKLY;BYDAY='+byday+'\r\n'
+      +'SUMMARY:'+icsEsc(b.title)+'\r\n'
+      +'DESCRIPTION:'+icsEsc(b.desc)+'\r\n'
+      +'BEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:'+icsEsc(b.title)+'\r\nTRIGGER:PT0M\r\nEND:VALARM\r\n'
+      +'END:VEVENT\r\n';
+  }
+  WDS.forEach(b=>{ ics+=evt(b,'MO,TU,WE,TH,FR,SA','wd'); });
+  HDS.forEach(b=>{ ics+=evt(b,'SU','we'); });
+  ics+='END:VCALENDAR\r\n';
+  return ics;
+}
+function icsEsc(s){ return String(s).replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n'); }
+function downloadICS(){
+  const blob=new Blob([buildICS()],{type:'text/calendar;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url; a.download='ceo-mode-schedule.ics';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
 
 // ─── CLOCK + NOW CARD ───
@@ -1260,9 +1464,16 @@ function tick(){
   });
 
   if(res){
-    const{b,s,e}=res;
-    document.getElementById('nowT').textContent=b.title;
-    document.getElementById('nowD').textContent=b.desc;
+    const{b,s}=res;
+    let{e}=res;
+    const v=blockView(b,sc);
+    // for the overnight sleep block, recompute end from tomorrow's wake time
+    if(isSleepBlock(b)){ let we=toM(tomorrowWake()); if(we<=s) we+=1440; e=we; }
+    // notification on block transition
+    if(_lastBlockId!==null && _lastBlockId!==b.id){ onBlockChange({title:v.title,desc:v.desc}); }
+    _lastBlockId=b.id;
+    document.getElementById('nowT').textContent=v.title;
+    document.getElementById('nowD').textContent=v.desc;
     let adjNm=nm;if(e>1440)adjNm=nm<s?nm+1440:nm;
     const pct=Math.min(100,Math.max(0,(adjNm-s)/(e-s)*100));
     document.getElementById('nowB').style.width=pct+'%';
@@ -1270,7 +1481,7 @@ function tick(){
     document.getElementById('nS').textContent=fmtT(s);
     document.getElementById('nE').textContent=fmtT(e);
     document.getElementById('nL').textContent=rh>0?`${rh}h ${rm}m left`:`${rm}m left`;
-    document.getElementById('nTag').innerHTML=`<span class="pill ${b.tc}" style="margin-top:8px;display:inline-block;">${b.tag}</span>`;
+    document.getElementById('nTag').innerHTML=`<span class="pill ${b.tc}" style="margin-top:8px;display:inline-block;">${v.tag}</span>`;
 
     function addA(elId,isH){
       const el=document.getElementById(elId);if(!el)return;
@@ -1294,7 +1505,7 @@ function tick(){
 
 // ─── TABS ───
 function showTab(t){
-  ['today','workout','study','biz','weekday','sunday','goals'].forEach(x=>{
+  ['today','workout','study','weekday','goals','stats'].forEach(x=>{
     const el=document.getElementById('view-'+x);
     if(el) el.classList.add('hidden');
     const tb=document.getElementById('tab-'+x);
@@ -1302,18 +1513,408 @@ function showTab(t){
   });
   document.getElementById('view-'+t).classList.remove('hidden');
   document.getElementById('tab-'+t).classList.add('active');
-  if(t==='workout'){ renderSplitGrid(); updateAbsLabels(); }
+  if(t==='workout'){ showFit(activeFitTab); renderSplitGrid(); updateAbsLabels(); }
   if(t==='study'){ renderStudyToday(); }
+  if(t==='weekday'){ renderScheduleLists(); }
+  if(t==='goals'){ renderGoals(); }
+  if(t==='stats'){ renderStats(); }
 }
 
-// ─── BUSINESS TAB ───
-const bizOpen={};
-function toggleBiz(n){
-  const body=document.getElementById('bbody-'+n);
-  const chev=document.getElementById('bchev-'+n);
-  const isOpen=body.classList.contains('open');
-  body.classList.toggle('open',!isOpen);
-  chev.classList.toggle('rot',!isOpen);
+// ─── GOALS + PER-GOAL STREAKS ───
+const GOALS=[
+  {id:'study', icon:'DHC', iconBg:'#04342C', iconCol:'#9FE1CB', iconSmall:true, title:'Clear DHC Programmer exam', sub:'12-week self-paced plan · Day 1 = your start Monday', body:'1 continuous study hour every day (5–6 AM) + 20-min night recap. 2-hr mock/review every Sunday. Wk 1–4: C, DSA, OS, DBMS. Wk 5–7: Networks, Web, Number Systems. Wk 8–10: Aptitude, English, GK. Wk 11–12: Mocks + revision. Target: clear the exam, become permanent staff at DHC.', cta:'Studied today'},
+  {id:'physique', icon:'💪', iconBg:'#04342C', title:'Physique — fat loss + muscle', sub:'Phase 2 program + IF 16:8 · 74 kg veg', body:'Gym 6x/week (Push/Pull/Legs) with abs after every session, LISS cardio last. Fasted training 6:10 AM. IF window 12–8 PM. Targets: 1650 cal, 148g protein, 67g fat, 114g carbs. Whey ×2 + creatine daily. See the Fitness tab for everything.', cta:'Trained + ate clean'},
+  {id:'business', icon:'₹', iconBg:'#412402', title:'Business — build & earn', sub:'~3 hrs/weekday · ~6.5 hrs/weekend', body:'Two continuous deep-work blocks every weekday (8–9 AM + 6–8 PM = 3 hrs) and two big blocks on weekends (8:15–12 + 1–4 PM = ~6.5 hrs). Every session, ask: does this action move the business forward or make money?', cta:'Did the work'},
+  {id:'running', icon:'🏃', iconBg:'#04342C', title:'Running — marathon path', sub:'Run days Tue/Thu/Sat + weekend long run', body:'Month 1: 3–4 km easy. Month 2: 5 km continuous. Month 3: 10 km race. Register a real 10K event now — a deadline you cannot negotiate with.', cta:'Ran today'},
+  {id:'brain', icon:'🧠', iconBg:'#26215C', title:'CEO brain + confidence', sub:'Read + journal + talk daily', body:'15–30 pages/day. Month 1: 48 Laws of Power. Month 2: Think and Grow Rich. Month 3: Atomic Habits. CEO journal every night (3 wins, 3 tasks). Talk to 1 new person daily.', cta:'Read + journaled'},
+  {id:'english', icon:'🗣️', iconBg:'#042C53', title:'English + communication', sub:'Daily shadowing + voice notes', body:'60-sec English voice note every day. Shadow speakers you admire — copy their words and rhythm. English audio on the commute. Month 3 goal: confident 10-min conversation with a stranger.', cta:'Practiced today'},
+  {id:'family', icon:'❤️', iconBg:'#4B1528', title:'Family & friends', sub:'1 hr weekday + 2.5 hrs weekend', body:'8:30–9:30 PM every weekday is locked. Phone down, full presence. Extended 5–7:30 PM on weekends. You are building this life FOR them. Never forget it.', cta:'Showed up'}
+];
+
+// date helpers (local-day based)
+function dayStr(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function todayStr(){ return dayStr(new Date()); }
+function yesterdayStr(){ const d=new Date(); d.setDate(d.getDate()-1); return dayStr(d); }
+
+function loadStreaks(){ return DB.get('streaks', {}); }
+function saveStreaks(o){ DB.set('streaks', o); }
+
+// Returns the *effective* current streak, accounting for a broken streak (missed day).
+function effectiveStreak(s){
+  if(!s||!s.last) return 0;
+  if(s.last===todayStr()||s.last===yesterdayStr()) return s.count||0;
+  return 0; // streak broken — last done was before yesterday
+}
+
+function toggleGoalDone(id){
+  const all=loadStreaks();
+  const s=all[id]||{count:0,last:null,best:0};
+  const t=todayStr();
+  if(s.last===t){
+    // already done today → undo
+    s.count=Math.max(0,(s.count||1)-1);
+    s.last = s.count>0 ? yesterdayStr() : null;
+  } else {
+    // mark done today
+    const cur=effectiveStreak(s);
+    s.count = cur+1;
+    s.last = t;
+  }
+  s.best=Math.max(s.best||0, s.count||0);
+  all[id]=s; saveStreaks(all);
+  renderGoals();
+}
+
+function renderGoals(){
+  const cont=document.getElementById('goals-container'); if(!cont) return;
+  const all=loadStreaks();
+  let totalActive=0, sumStreak=0, maxBest=0;
+  cont.innerHTML=GOALS.map(g=>{
+    const s=all[g.id]||{count:0,last:null,best:0};
+    const cur=effectiveStreak(s);
+    const doneToday=s.last===todayStr();
+    const best=s.best||0;
+    if(cur>0) totalActive++;
+    sumStreak+=cur; maxBest=Math.max(maxBest,best);
+    const iconStyle=`background:${g.iconBg};${g.iconCol?`color:${g.iconCol};`:''}${g.iconSmall?'font-size:13px;font-weight:500;':''}`;
+    return `<div class="goal-card">
+      <div class="goal-icon-row"><div class="goal-icon" style="${iconStyle}">${g.icon}</div><div><div class="goal-main">${g.title}</div><div class="goal-sub">${g.sub}</div></div></div>
+      <div class="goal-body">${g.body}</div>
+      <div class="goal-streak-row">
+        <div class="streak-badge ${cur>0?'lit':''}"><span class="streak-flame">🔥</span><span>Day ${cur}</span></div>
+        <span class="streak-best">best ${best}</span>
+        <button class="done-btn ${doneToday?'done':'todo'}" onclick="toggleGoalDone('${g.id}')">${doneToday?'✓ Done today':g.cta}</button>
+      </div>
+    </div>`;
+  }).join('');
+  // summary banner
+  const sum=document.getElementById('goals-summary');
+  if(sum){
+    sum.innerHTML=`<div style="display:flex;gap:8px;">
+      <div style="flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px;text-align:center;"><div style="font-size:18px;font-weight:500;color:var(--gold-light);">${totalActive}/${GOALS.length}</div><div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;">streaks alive</div></div>
+      <div style="flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px;text-align:center;"><div style="font-size:18px;font-weight:500;color:var(--teal-light);">${sumStreak}</div><div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;">total streak days</div></div>
+      <div style="flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px;text-align:center;"><div style="font-size:18px;font-weight:500;color:#fff;">${maxBest}</div><div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;">longest ever</div></div>
+    </div>`;
+  }
+}
+
+// ─── STATS TAB — one simple table of all progress ───
+function renderStats(){
+  const table=document.getElementById('stats-table'); if(!table) return;
+  const streaks=loadStreaks();
+  const day=getDayNum();
+  const phase=getFitnessPhase();
+  const week=Math.max(1,Math.ceil(day/7));
+
+  // aggregate streak stats
+  let alive=0, totalDays=0, longest=0;
+  GOALS.forEach(g=>{ const s=streaks[g.id]||{}; const cur=effectiveStreak(s); if(cur>0)alive++; totalDays+=cur; longest=Math.max(longest,s.best||0); });
+
+  // today's checklist
+  const checks=loadChecks(); const checkList=fitChecks();
+  const checkDone=checkList.filter(c=>checks[c.id]).length;
+  // count of days with at least one check ever logged
+  const allChecks=DB.get('checks',{});
+  const daysLogged=Object.values(allChecks).filter(o=>o && Object.values(o).some(v=>v)).length;
+
+  // workout entries logged (Phase 2 weeks + Phase 1)
+  const weights=DB.get('weights',{});
+  let liftsLogged=0, heaviest=0, heaviestName='—';
+  ['push','pull','legs'].forEach(t=>{ const wk=weights[t]||{}; Object.values(wk).forEach(set=>{ Object.entries(set||{}).forEach(([n,v])=>{ if(v){ liftsLogged++; if(v>heaviest){ heaviest=v; heaviestName=n; } } }); }); });
+  const p1w=loadP1Weights(); const p1count=Object.values(p1w).filter(v=>v).length;
+  Object.entries(p1w).forEach(([n,v])=>{ if(v>heaviest){ heaviest=v; heaviestName=n; } });
+
+  // Phase 1 measurements
+  const meas=loadP1Meas();
+
+  const phaseName=phase===1?'Phase 1 · Foundation':'Phase 2 · Fat Burning';
+  const studyEntry=getTodayStudyEntry();
+  const studyTxt=studyEntry?('Day '+studyEntry.dayNo+' / 84'):(day<1?'Not started':'Plan complete');
+
+  // ---- summary cards ----
+  const sum=document.getElementById('stats-summary');
+  if(sum){
+    sum.innerHTML=`<div class="stat-card-row">
+      <div class="stat-card"><div class="v" style="color:var(--gold-light);">${day}</div><div class="l">Program day</div></div>
+      <div class="stat-card"><div class="v" style="color:var(--teal-light);">${alive}/${GOALS.length}</div><div class="l">Streaks alive</div></div>
+      <div class="stat-card"><div class="v">${longest}</div><div class="l">Best streak</div></div>
+      <div class="stat-card"><div class="v" style="color:var(--blue-light);">${daysLogged}</div><div class="l">Days logged</div></div>
+    </div>`;
+  }
+
+  // ---- one table ----
+  const row=(cat,metric,val)=>`<tr><td>${cat?`<div class="st-cat">${cat}</div>`:''}<div class="st-metric">${metric}</div></td><td class="st-val">${val}</td></tr>`;
+  const grp=(label)=>`<tr class="grp"><td colspan="2">${label}</td></tr>`;
+  const fmtMeas=(k,unit)=> (meas[k]!=null? meas[k]+unit : '—');
+
+  let h=`<thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody>`;
+
+  h+=grp('Program');
+  h+=row('','Current day',`Day ${day}`);
+  h+=row('','Week',`${week} / 12`);
+  h+=row('','Fitness phase',phaseName);
+  h+=row('','Study progress',studyTxt);
+
+  h+=grp('Goal streaks  ·  current / best');
+  GOALS.forEach(g=>{
+    const s=streaks[g.id]||{}; const cur=effectiveStreak(s); const best=s.best||0;
+    const flame=cur>0?'🔥 ':'';
+    h+=row('', g.title, `${flame}${cur} / ${best}`);
+  });
+  h+=row('', 'Total streak days', String(totalDays));
+
+  h+=grp("Today's discipline");
+  h+=row('', `Checklist (${phase===1?'Phase 1':'Phase 2'})`, `${checkDone} / ${checkList.length}`);
+  h+=row('', 'Days checked-in (all time)', String(daysLogged));
+
+  h+=grp('Workout log');
+  h+=row('', 'Lift entries logged', String(liftsLogged + p1count));
+  h+=row('', 'Heaviest logged', heaviest>0? `${heaviest} kg · ${heaviestName}` : '—');
+
+  h+=grp('Body measurements (Phase 1 baseline)');
+  h+=row('', 'Weight', fmtMeas('weight',' kg'));
+  h+=row('', 'Chest', fmtMeas('chest','″'));
+  h+=row('', 'Waist', fmtMeas('waist','″'));
+  h+=row('', 'Hips',  fmtMeas('hips','″'));
+  h+=row('', 'Arms',  fmtMeas('arms','″'));
+
+  h+=`</tbody>`;
+  table.innerHTML=h;
+}
+
+// ─── SCHEDULE TAB (renders from same WDS/HDS arrays the Today tab uses) ───
+function scheduleBlockHTML(b, sched){
+  const bg=BG_MAP[b.tc]||'c-dim';
+  const v=blockView(b,sched,false);   // static reference — keep native wake time
+  return `<div class="blk"><div class="bt ${bg}" style="min-width:80px;">${b.s}–${b.e}</div><div class="bc"><div class="bt2">${v.title}</div><div class="bs">${v.desc}</div><span class="pill ${b.tc}">${v.tag}</span></div></div>`;
+}
+function renderScheduleLists(){
+  const wd=document.getElementById('sch-wd-list');
+  const we=document.getElementById('sch-we-list');
+  if(wd) wd.innerHTML=WDS.map(b=>scheduleBlockHTML(b,WDS)).join('');
+  if(we) we.innerHTML=HDS.map(b=>scheduleBlockHTML(b,HDS)).join('');
+}
+function showSchedule(which){
+  document.getElementById('sch-wd').classList.toggle('hidden',which!=='wd');
+  document.getElementById('sch-we').classList.toggle('hidden',which!=='we');
+  document.getElementById('sch-tab-wd').classList.toggle('active',which==='wd');
+  document.getElementById('sch-tab-we').classList.toggle('active',which==='we');
+}
+
+// ─── FITNESS SUB-TABS (phase-aware) ───
+let activeFitTab='workout';
+function showFit(which){
+  activeFitTab=which;
+  ['workout','diet','supps','check'].forEach(p=>{
+    const el=document.getElementById('fit-'+p); if(el) el.classList.toggle('hidden',p!==which);
+    const tb=document.getElementById('fit-tab-'+p); if(tb) tb.classList.toggle('active',p===which);
+  });
+  applyFitnessPhase();
+  if(which==='workout'){ renderSplitGrid(); updateAbsLabels(); renderFitToday(); }
+  if(which==='check'){ renderChecks(); }
+}
+
+// Toggle Phase 1 vs Phase 2 content across the whole Fitness tab.
+function applyFitnessPhase(){
+  const p1 = getFitnessPhase()===1;
+  renderPhaseBanner();
+  // macro header (Phase 2 only)
+  const macros=document.getElementById('fit-p2-macros'); if(macros) macros.classList.toggle('hidden',p1);
+  // per-panel P1/P2 blocks
+  [['fit-p1-workout','fit-p2-workout'],['fit-p1-diet','fit-p2-diet'],['fit-p1-supps','fit-p2-supps']].forEach(([p1id,p2id])=>{
+    const a=document.getElementById(p1id), b=document.getElementById(p2id);
+    if(a) a.classList.toggle('hidden',!p1);
+    if(b) b.classList.toggle('hidden',p1);
+  });
+  if(p1){ renderP1Workout(); renderP1Diet(); renderP1Supps(); }
+}
+
+function renderPhaseBanner(){
+  const el=document.getElementById('fit-phase-banner'); if(!el) return;
+  const day=getDayNum();
+  if(getFitnessPhase()===1){
+    el.innerHTML=`<div style="background:linear-gradient(135deg,#412402,#26215C);border-radius:12px;padding:13px 14px;">
+      <div style="font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:4px;">Phase 1 · Foundation Week · Day ${day} of 7</div>
+      <div style="font-size:14px;font-weight:500;color:#fff;line-height:1.3;margin-bottom:3px;">Learn the movements. Build the habit.</div>
+      <div style="font-size:11px;color:rgba(250,199,117,0.75);line-height:1.5;">Same full-body workout every day · light weights · perfect form · clean eating only (no macros, no fasting yet). <strong style="color:#fff;">Phase 2 auto-unlocks on Day 8.</strong></div>
+    </div>`;
+  } else {
+    el.innerHTML=`<div style="background:rgba(29,158,117,0.08);border:1px solid rgba(29,158,117,0.25);border-radius:10px;padding:10px 13px;font-size:11px;color:var(--teal-light);line-height:1.5;">
+      <strong style="color:#fff;font-weight:500;">Phase 2 · Fat Burning Mode · Day ${day}</strong> — Push/Pull/Legs, IF 16:8, macro targets. Foundation week complete. ✓</div>`;
+  }
+}
+
+// ─── TODAY'S FITNESS PLAN CARD (phase-aware) ───
+function renderFitToday(){
+  const card=document.getElementById('fit-today-card'); if(!card) return;
+  const dow=new Date().getDay();
+  // PHASE 1 — full body every training day, Sunday rest
+  if(getFitnessPhase()===1){
+    const day=getDayNum();
+    if(dow===0){ // Sunday = rest (Day 7 of foundation week)
+      card.innerHTML=`<div class="st-today-box" style="background:rgba(255,255,255,0.04);border-color:var(--border);"><div class="st-today-date" style="color:var(--muted);">Today — Rest day (Day ${day})</div><div class="st-today-topic" style="font-size:15px;">No workout. Eat clean, hydrate, sleep.</div><div class="st-today-meta">Take your Day 7 photo + weigh-in. Phase 2 unlocks tomorrow.</div></div>`;
+      return;
+    }
+    card.innerHTML=`<div class="st-today-box" style="border-color:var(--gold);background:rgba(239,159,39,0.07);">
+      <div class="st-today-date" style="color:var(--gold-light);">Today — Full Body Workout (Day ${day} of 7)</div>
+      <div class="st-today-topic" style="font-size:16px;">Same 10-exercise full-body routine</div>
+      <div class="st-today-meta">Light–moderate weight · focus on FORM, not load · 60–90s rest · finish with 10–15 min cardio. Expand the card below.</div>
+    </div>`;
+    return;
+  }
+  // PHASE 2 — PPL
+  const type=DOW_TYPE[dow];
+  if(type==='rest'){
+    card.innerHTML=`<div class="st-today-box" style="background:rgba(255,255,255,0.04);border-color:var(--border);"><div class="st-today-date" style="color:var(--muted);">Today — Rest day</div><div class="st-today-topic" style="font-size:15px;">No lifting. Active recovery + sleep.</div><div class="st-today-meta">Still hit 148g protein and your supplements. Recovery is when muscle is built.</div></div>`;
+    return;
+  }
+  const muscles=type==='push'?'Chest · Shoulders · Triceps':type==='pull'?'Back · Biceps · Rear Delts · Traps':'Quads · Hamstrings · Glutes · Calves';
+  const abs=ABS_BY_DOW[dow];
+  const col=DOW_COLOR[dow];
+  card.innerHTML=`<div class="st-today-box" style="border-color:${col};background:rgba(29,158,117,0.06);">
+    <div class="st-today-date" style="color:${col};">Today — ${DOW_LABEL[dow]} day</div>
+    <div class="st-today-topic" style="font-size:16px;">${muscles}</div>
+    <div class="st-today-meta">+ ${abs?abs.label:'abs'} after lifts · 15–20 min LISS cardio last · expand the ${DOW_LABEL[dow]} card below to log weights.</div>
+  </div>`;
+}
+
+// ─── PHASE 1 RENDERERS ───
+function renderP1Workout(){
+  const el=document.getElementById('fit-p1-workout'); if(!el || el._done) return;
+  let rows=P1_EX.map((e,i)=>`<tr><td><span class="ex-num">${i+1}</span><span class="ex-name">${e.n}</span><br><span class="ex-target">${e.target}</span></td><td>${e.sets}</td><td>${e.reps}</td></tr>`).join('');
+  // weight tracker (P1) — simple, single column
+  const saved=loadP1Weights();
+  const trk=P1_EX_NAMES.map((n,i)=>`<div class="tr-row"><div class="tr-name">${n}</div><input type="number" placeholder="kg" min="0" max="999" step="0.5" value="${saved[n]||''}" id="p1w_${i}" aria-label="${n}"></div>`).join('');
+  el.innerHTML=`
+    <div class="info-box" style="margin-bottom:12px;"><strong>Full Body · 6 days/week · Day 7 rest.</strong> Same workout daily — that's intentional: repetition teaches the movement. Light–moderate weight, controlled reps. If form breaks, the weight is too heavy.</div>
+    <div class="wo-day-card">
+      <div class="wo-day-hdr" onclick="toggleWoDay('p1wo')">
+        <div><div class="wo-day-title">The Full-Body Workout</div><div class="wo-day-sub">Complete in order · 60–90s rest between sets</div></div>
+        <div style="display:flex;align-items:center;gap:6px;"><span class="wo-badge" style="background:rgba(239,159,39,0.12);color:var(--gold);border-color:rgba(239,159,39,0.3);">Daily</span><span class="wo-chev" id="wchev-p1wo">▼</span></div>
+      </div>
+      <div class="wo-day-body open" id="wbody-p1wo">
+        <table class="ex-table"><thead><tr><th>#&nbsp;Exercise</th><th>Sets</th><th>Reps</th></tr></thead><tbody>${rows}</tbody></table>
+        <div class="cardio-note"><strong>This week's only job:</strong> learn the form, feel the muscle work, show up all 6 days. Don't chase heavy weights — that starts in Phase 2.</div>
+        <div class="tracker-box">
+          <div class="tracker-title">Weight tracker — <span>Full Body</span></div>
+          <div id="p1-tracker">${trk}</div>
+          <button class="save-btn" onclick="saveP1Weights()">Save weights</button>
+          <div class="saved-ok" id="p1-saved">✓ Saved!</div>
+        </div>
+      </div>
+    </div>
+    <div class="wo-day-card">
+      <div class="wo-day-hdr" onclick="toggleWoDay('p1meas')">
+        <div><div class="wo-day-title">Day 1 photo + measurements</div><div class="wo-day-sub">Record once now · compare on Day 7</div></div>
+        <div style="display:flex;align-items:center;gap:6px;"><span class="wo-badge" style="background:rgba(55,138,221,0.12);color:var(--blue-light);border-color:rgba(55,138,221,0.3);">Baseline</span><span class="wo-chev" id="wchev-p1meas">▼</span></div>
+      </div>
+      <div class="wo-day-body" id="wbody-p1meas">
+        <div class="cardio-note" style="margin-bottom:10px;"><strong>Do this on Day 1:</strong> take front/side/back photos (same pose + lighting), then log your numbers. Weigh once now and once on Day 7 — not daily.</div>
+        ${[['weight','Weight (kg)'],['chest','Chest (in)'],['waist','Waist (in)'],['hips','Hips (in)'],['arms','Arms (in)']].map(([k,lbl])=>{
+          return `<div class="tr-row"><div class="tr-name">${lbl}</div><input type="number" placeholder="—" min="0" max="999" step="0.1" value="${(loadP1Meas()[k]||'')}" id="p1m_${k}" aria-label="${lbl}"></div>`;
+        }).join('')}
+        <button class="save-btn" onclick="saveP1Meas()">Save measurements</button>
+        <div class="saved-ok" id="p1-meas-saved">✓ Saved!</div>
+      </div>
+    </div>
+    <div class="wo-day-card">
+      <div class="wo-day-hdr" onclick="toggleWoDay('p1warn')">
+        <div><div class="wo-day-title">Mistakes to avoid this week</div><div class="wo-day-sub">Avoid these → ahead of 90% who start</div></div>
+        <div style="display:flex;align-items:center;gap:6px;"><span class="wo-badge" style="background:rgba(226,75,74,0.12);color:#F09595;border-color:rgba(226,75,74,0.3);">Read</span><span class="wo-chev" id="wchev-p1warn">▼</span></div>
+      </div>
+      <div class="wo-day-body" id="wbody-p1warn">
+        ${[['Going too hard, too fast','Start light. Form first. Build up gradually — it\'s Week 1, not the finale.'],
+           ['Skipping because you\'re sore','Soreness is normal and fades when you move. Show up anyway, go lighter if needed.'],
+           ['Overcomplicating nutrition','No calories/macros/timing yet. Just cut the junk. Clean home food.'],
+           ['Weighing daily','Weight swings on water + food. Weigh Day 1 and Day 7 only.'],
+           ['Waiting for motivation','Motivation comes AFTER you start. Discipline first — just begin.']
+          ].map(([t,d])=>`<div style="background:var(--bg3);border-radius:8px;padding:10px 12px;margin-bottom:7px;"><div style="font-size:12px;font-weight:500;color:#F09595;margin-bottom:2px;">${t}</div><div style="font-size:11px;color:var(--muted);line-height:1.5;">${d}</div></div>`).join('')}
+      </div>
+    </div>`;
+  el._done=true;
+}
+function loadP1Weights(){ return DB.get('p1_weights', {}); }
+function saveP1Weights(){
+  const data={};
+  P1_EX_NAMES.forEach((n,i)=>{ const el=document.getElementById('p1w_'+i); if(el&&el.value) data[n]=parseFloat(el.value); });
+  DB.set('p1_weights', data);
+  const m=document.getElementById('p1-saved'); if(m){ m.style.display='block'; setTimeout(()=>m.style.display='none',2000); }
+}
+function loadP1Meas(){ return DB.get('p1_meas', {}); }
+function saveP1Meas(){
+  const data={};
+  ['weight','chest','waist','hips','arms'].forEach(k=>{ const el=document.getElementById('p1m_'+k); if(el&&el.value) data[k]=parseFloat(el.value); });
+  DB.set('p1_meas', data);
+  const m=document.getElementById('p1-meas-saved'); if(m){ m.style.display='block'; setTimeout(()=>m.style.display='none',2000); }
+}
+
+function renderP1Diet(){
+  const el=document.getElementById('fit-p1-diet'); if(!el || el._done) return;
+  const eat=P1_EAT.map(([k,v])=>`<tr><td><span class="ex-name" style="color:var(--teal-light);">${k}</span></td><td style="text-align:left;color:var(--muted);font-size:11px;">${v}</td></tr>`).join('');
+  const cut=P1_CUT.map(([k,v])=>`<tr><td><span class="ex-name" style="color:#F09595;">${k}</span></td><td style="text-align:left;color:var(--muted);font-size:11px;">${v}</td></tr>`).join('');
+  el.innerHTML=`
+    <div class="info-box" style="margin-bottom:12px;"><strong>One rule this week: clean up the garbage.</strong> No calorie counting, no macros, no fasting yet — that all starts in Phase 2. Just eat simple, clean, home-cooked food. Drink 3+ litres of water daily.</div>
+    <div class="green-box" style="margin-bottom:10px;"><strong>Eat freely (when hungry):</strong></div>
+    <table class="abs-table" style="margin-bottom:14px;"><tbody>${eat}</tbody></table>
+    <div class="info-box" style="background:rgba(226,75,74,0.08);border-color:rgba(226,75,74,0.25);color:#F7C1C1;margin-bottom:10px;"><strong style="color:#fff;">Cut these out completely for 7 days:</strong></div>
+    <table class="abs-table"><tbody>${cut}</tbody></table>
+    <div class="green-box" style="margin-top:12px;"><strong>Bottom line:</strong> eat like your grandmother would approve. If you can't do this for 7 days, the next 93 will be impossible. It's just one week — prove it to yourself.</div>`;
+  el._done=true;
+}
+
+function renderP1Supps(){
+  const el=document.getElementById('fit-p1-supps'); if(!el || el._done) return;
+  const rows=P1_SUPPS.map(([n,dose,when])=>`<div class="st-res" style="border-left:3px solid var(--teal);"><div class="st-res-name">${n} — ${dose}</div><div class="st-res-sub">${when}</div></div>`).join('');
+  el.innerHTML=`
+    <div class="info-box" style="margin-bottom:12px;">Supplements are the last 5% — <strong>food and training are 95%</strong>. They're <strong style="color:var(--gold-light);">optional</strong> in Phase 1. Consistency is mandatory. If you want to take something, this is what actually helps:</div>
+    <div class="st-res-list" style="margin-bottom:14px;">${rows}</div>
+    <div class="info-box" style="background:rgba(226,75,74,0.08);border-color:rgba(226,75,74,0.25);color:#F7C1C1;"><strong style="color:#fff;">Don't waste money on:</strong> fat burners, testosterone boosters, pre-workouts (just have black coffee), BCAAs, mass gainers. Buy chicken, eggs, paneer and vegetables instead.</div>`;
+  el._done=true;
+}
+
+// ─── DAILY CHECKLIST (phase-aware) ───
+const FIT_CHECKS_P2=[
+  {id:'whey',  label:'Double whey shake (2 scoops · ~50g protein)'},
+  {id:'prot',  label:'Hit 148g protein total today'},
+  {id:'water', label:'3+ litres of water'},
+  {id:'creat', label:'Creatine 5g'},
+  {id:'b12d3', label:'B12 + Vitamin D3'},
+  {id:'fast',  label:'Kept the 16:8 window (eat 12–8 PM only)'},
+  {id:'train', label:'Workout done (lifts + abs + LISS)'},
+  {id:'sleep', label:'7+ hrs sleep last night'}
+];
+const FIT_CHECKS_P1=[
+  {id:'train', label:'Full-body workout done (or rest if Day 7)'},
+  {id:'clean', label:'Ate clean — no junk, sugar, or fried food'},
+  {id:'water', label:'3+ litres of water'},
+  {id:'photo', label:'Progress photo taken (same pose/lighting)'},
+  {id:'sleep', label:'7+ hrs sleep last night'}
+];
+function fitChecks(){ return getFitnessPhase()===1 ? FIT_CHECKS_P1 : FIT_CHECKS_P2; }
+function checkKey(){ return new Date().toDateString(); }   // date string used as sub-key
+function loadChecks(){ return DB.getIn(['checks', checkKey()], {}); }
+function saveChecks(o){ DB.setIn(['checks', checkKey()], o); }
+function toggleCheck(id){
+  const o=loadChecks(); o[id]=!o[id]; saveChecks(o); renderChecks();
+}
+function resetChecks(){ saveChecks({}); renderChecks(); }
+function renderChecks(){
+  const list=document.getElementById('fit-check-list'); if(!list) return;
+  const checks=fitChecks();
+  const o=loadChecks();
+  const done=checks.filter(c=>o[c.id]).length;
+  list.innerHTML=checks.map(c=>{
+    const on=!!o[c.id];
+    return `<div onclick="toggleCheck('${c.id}')" style="display:flex;align-items:center;gap:10px;background:var(--bg2);border:1px solid ${on?'rgba(29,158,117,0.4)':'var(--border)'};border-radius:9px;padding:11px 12px;margin-bottom:7px;cursor:pointer;-webkit-tap-highlight-color:transparent;">
+      <div style="width:20px;height:20px;border-radius:5px;flex-shrink:0;border:1.5px solid ${on?'var(--teal)':'var(--dim)'};background:${on?'var(--teal)':'transparent'};display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;">${on?'✓':''}</div>
+      <div style="font-size:12px;color:${on?'var(--text)':'var(--muted)'};line-height:1.4;">${c.label}</div>
+    </div>`;
+  }).join('');
+  const prog=document.getElementById('fit-check-progress');
+  if(prog){
+    const pct=Math.round(done/checks.length*100);
+    prog.innerHTML=`<div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:5px;"><span>Today's discipline</span><span style="color:var(--teal-light);font-weight:500;">${done}/${checks.length}</span></div><div style="background:var(--bg3);border-radius:4px;height:6px;overflow:hidden;"><div style="height:6px;background:var(--teal);width:${pct}%;transition:width .2s;"></div></div>`;
+  }
 }
 
 // ─── WORKOUT TAB HELPERS ───
@@ -1386,95 +1987,195 @@ const WO_EX_NAMES = {
   legs:['Barbell Squats','Leg Extension','Leg Press','Leg Curls','Walking Lunges','Calf Raises','Back Extension']
 };
 
-function wKeyWo(type,wk){ return `ceo_wo_${type}_${wk}`; }
-function loadWo(type,wk){ try{const d=localStorage.getItem(wKeyWo(type,wk));return d?JSON.parse(d):{}}catch(e){return {};} }
+// NOTE: the Fitness-tab weight tracker functions (loadWo / renderWoTrackerInputs /
+// switchWkWo / saveWoWeights) are defined once, DB-backed, just below the storage
+// layer — see the "WEIGHT TRACKER (DB-backed)" section.
 
-function renderWoTrackerInputs(type,wk){
-  const exs=WO_EX_NAMES[type];
-  const saved=loadWo(type,wk);
-  let h='';
-  exs.forEach((name,i)=>{
-    const v=saved[name]||'';
-    h+=`<div class="tr-row"><div class="tr-name">${name}</div><input type="number" placeholder="kg" min="0" max="999" step="0.5" value="${v}" id="wo_inp_${type}_${wk}_${i}" aria-label="${name} week ${wk}"></div>`;
-  });
-  document.getElementById(`wt-wo-${type}`).innerHTML=h;
-}
+// ═══════════════════════════════════════════════════════════════════
+//  UNIFIED DATA STORE  —  Supabase (cloud DB) + localStorage (offline cache)
+//
+//  Every piece of app state (streaks, weights, measurements, checks,
+//  settings, start date) lives in ONE object: appData.
+//  - DB.get(key) / DB.set(key, value)  — read/write any field
+//  - saved instantly to localStorage (works offline, never loses data)
+//  - mirrored to Supabase (debounced) so it syncs across all devices
+//
+//  TO ENABLE CLOUD SYNC:  open the app → Today tab → "Cloud sync" card →
+//  paste your Supabase Project URL + anon key (one time, per device).
+//  Until then it runs fine on this device using localStorage only.
+// ═══════════════════════════════════════════════════════════════════
 
-function switchWkWo(type,wk,btn){
-  activeWoWk[type]=wk;
-  document.querySelectorAll(`#wt-tabs-${type}-wo .wk-tab`).forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  renderWoTrackerInputs(type,wk);
-}
-
-function saveWoWeights(type){
-  const wk=activeWoWk[type];
-  const exs=WO_EX_NAMES[type];
-  const data={};
-  exs.forEach((name,i)=>{
-    const el=document.getElementById(`wo_inp_${type}_${wk}_${i}`);
-    if(el&&el.value) data[name]=parseFloat(el.value);
-  });
-  try{localStorage.setItem(wKeyWo(type,wk),JSON.stringify(data));}catch(e){}
-  const msg=document.getElementById(`wo-saved-${type}`);
-  msg.style.display='block'; setTimeout(()=>msg.style.display='none',2000);
-}
-
-// ─── STORAGE: JSONBin.io — works from any device, any browser ───
-// SETUP (one-time, 2 min):
-//   1. Go to https://jsonbin.io  →  Sign up free
-//   2. Click "+ Create Bin"  →  paste {} as content  →  Create
-//   3. Copy the Bin ID from the URL (looks like: 6849abc...)
-//   4. Go to API Keys  →  Create Access Key  →  copy it
-//   5. Paste both below and redeploy
-const JSONBIN_ID  = '6a1be3acddf5aa59f77ae4af';
-const JSONBIN_KEY = '$2a$10$xfTsS.pS9sJxbT4fKLwR5.z4GL3mJibjYXVWd1g6oavP4/Xea2/P6';
-const JSONBIN_URL = `https://api.jsonbin.io/v3/b/${JSONBIN_ID}`;
-
-let appData = { weights:{} };
+const DB_ROW_ID = 'ceo-assistant-main';   // single shared row holding the whole state
+let appData = {};                          // the entire app state
 let _saveTimer = null;
+let _sbClientLoading = null;
 
-async function loadAppData(){
-  if(JSONBIN_ID === '6a1be3acddf5aa59f77ae4af'){
-    // fallback to localStorage until JSONBin is configured
-    try{ const d=localStorage.getItem('ceo_data'); if(d) appData=JSON.parse(d); }catch(e){}
-    showStorageBanner();
-    return;
-  }
-  try{
-    const r = await fetch(JSONBIN_URL+'/latest', {
-      headers:{ 'X-Access-Key': JSONBIN_KEY, 'X-Bin-Meta': 'false' }
-    });
-    if(r.ok){ const d=await r.json(); if(d && typeof d==='object') appData=d; }
-  }catch(e){ console.log('Load failed, using localStorage fallback'); try{ const d=localStorage.getItem('ceo_data'); if(d) appData=JSON.parse(d); }catch(e2){} }
+// ---- Supabase config (stored only in this browser, never committed) ----
+function sbConfig(){
+  try{ return JSON.parse(localStorage.getItem('ceo_sb')||'null'); }catch(e){ return null; }
 }
+function setSbConfig(url, key){
+  if(url && key){ localStorage.setItem('ceo_sb', JSON.stringify({url:url.replace(/\/+$/,''), key})); }
+  else { localStorage.removeItem('ceo_sb'); }
+}
+function sbEnabled(){ const c=sbConfig(); return !!(c && c.url && c.key); }
 
-async function saveAppData(){
-  // always save to localStorage as instant backup
-  try{ localStorage.setItem('ceo_data', JSON.stringify(appData)); }catch(e){}
-  if(JSONBIN_ID === '6a1be3acddf5aa59f77ae4af') return;
-  // debounce: wait 800ms after last change before writing to JSONBin
-  clearTimeout(_saveTimer);
-  _saveTimer = setTimeout(async()=>{
-    try{
-      await fetch(JSONBIN_URL, {
-        method:'PUT',
-        headers:{ 'Content-Type':'application/json', 'X-Access-Key': JSONBIN_KEY },
-        body: JSON.stringify(appData)
+// Lazy-load the Supabase JS client from CDN only when configured.
+async function getSb(){
+  if(!sbEnabled()) return null;
+  if(window.supabase && window._sbClient) return window._sbClient;
+  if(!window.supabase){
+    if(!_sbClientLoading){
+      _sbClientLoading = new Promise((res,rej)=>{
+        const s=document.createElement('script');
+        s.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
+        s.onload=res; s.onerror=rej; document.head.appendChild(s);
       });
-    }catch(e){ console.log('Remote save failed, data kept in localStorage'); }
-  }, 800);
+    }
+    try{ await _sbClientLoading; }catch(e){ console.warn('Supabase SDK load failed'); return null; }
+  }
+  const c=sbConfig();
+  if(!window._sbClient){ window._sbClient = window.supabase.createClient(c.url, c.key); }
+  return window._sbClient;
 }
 
-function showStorageBanner(){
-  const b = document.getElementById('storage-banner');
-  if(b) b.style.display='flex';
+// ---- the key/value accessor every loader & saver funnels through ----
+const DB = {
+  get(key, fallback){ return (key in appData) ? appData[key] : fallback; },
+  set(key, value){ appData[key]=value; persist(); },
+  // namespaced sub-object helpers (for weights stored as appData.weights[type][wk])
+  getIn(path, fallback){
+    let o=appData; for(const p of path){ if(o==null) return fallback; o=o[p]; }
+    return o===undefined?fallback:o;
+  },
+  setIn(path, value){
+    let o=appData;
+    for(let i=0;i<path.length-1;i++){ if(typeof o[path[i]]!=='object'||o[path[i]]===null) o[path[i]]={}; o=o[path[i]]; }
+    o[path[path.length-1]]=value; persist();
+  }
+};
+
+// Save to localStorage immediately, then push to Supabase (debounced).
+function persist(){
+  try{ localStorage.setItem('ceo_data', JSON.stringify(appData)); }catch(e){}
+  if(!sbEnabled()) return;
+  clearTimeout(_saveTimer);
+  _saveTimer=setTimeout(pushToCloud, 800);
+}
+async function pushToCloud(){
+  const sb=await getSb(); if(!sb) return;
+  try{
+    const { error } = await sb.from('app_state')
+      .upsert({ id:DB_ROW_ID, data:appData, updated_at:new Date().toISOString() });
+    if(error){ console.warn('Cloud save error:', error.message); setSyncStatus('error'); }
+    else setSyncStatus('saved');
+  }catch(e){ console.warn('Cloud save failed:', e); setSyncStatus('error'); }
 }
 
-function getWeight(type, wk){ return (appData.weights[type] && appData.weights[type][wk]) || {}; }
-function setWeight(type, wk, data){
-  if(!appData.weights[type]) appData.weights[type]={};
-  appData.weights[type][wk]=data;
+// Load: localStorage first (instant), then merge cloud copy if present.
+async function loadAppData(){
+  try{ const d=localStorage.getItem('ceo_data'); if(d) appData=JSON.parse(d)||{}; }catch(e){ appData={}; }
+  if(!sbEnabled()){ setSyncStatus('local'); return; }
+  setSyncStatus('loading');
+  const sb=await getSb(); if(!sb){ setSyncStatus('error'); return; }
+  try{
+    const { data, error } = await sb.from('app_state').select('data').eq('id',DB_ROW_ID).maybeSingle();
+    if(error){ console.warn('Cloud load error:', error.message); setSyncStatus('error'); return; }
+    if(data && data.data && typeof data.data==='object'){
+      appData = data.data;                       // cloud is source of truth on open
+      try{ localStorage.setItem('ceo_data', JSON.stringify(appData)); }catch(e){}
+    } else {
+      // first run on a fresh project — push whatever we have locally
+      await pushToCloud();
+    }
+    setSyncStatus('synced');
+  }catch(e){ console.warn('Cloud load failed:', e); setSyncStatus('error'); }
+}
+
+// kept for back-compat: anything that called saveAppData() still works
+function saveAppData(){ persist(); }
+
+// Weight accessor (Phase 2 tracker) — now backed by DB
+function getWeight(type, wk){ return DB.getIn(['weights',type,wk], {}); }
+function setWeight(type, wk, data){ DB.setIn(['weights',type,wk], data); }
+
+// ─── CLOUD SYNC UI ───
+let _syncState='local';
+function setSyncStatus(s){ _syncState=s; renderSyncStatus(); }
+function renderSyncStatus(){
+  const el=document.getElementById('sync-status'); if(!el) return;
+  const map={
+    local:   ['On this device only','var(--muted)','var(--bg3)'],
+    loading: ['Connecting…','var(--blue-light)','rgba(55,138,221,0.15)'],
+    synced:  ['✓ Synced','var(--teal-light)','rgba(29,158,117,0.15)'],
+    saved:   ['✓ Saved to cloud','var(--teal-light)','rgba(29,158,117,0.15)'],
+    error:   ['⚠ Sync error','#F09595','rgba(226,75,74,0.15)']
+  };
+  const [txt,col,bg]=map[_syncState]||map.local;
+  el.textContent=txt; el.style.color=col; el.style.background=bg;
+}
+function renderSyncCard(){
+  renderSyncStatus();
+  const desc=document.getElementById('sync-desc');
+  const connectBtn=document.getElementById('sync-toggle-btn');
+  const disBtn=document.getElementById('sync-disconnect');
+  const form=document.getElementById('sync-form');
+  if(!desc) return;
+  if(sbEnabled()){
+    const c=sbConfig();
+    desc.innerHTML=`Connected to <strong style="color:var(--blue-light);">${(c.url||'').replace('https://','')}</strong>. Every entry saves automatically and loads on all your devices.`;
+    if(connectBtn) connectBtn.classList.add('hidden');
+    if(form) form.classList.add('hidden');
+    if(disBtn) disBtn.classList.remove('hidden');
+  } else {
+    desc.innerHTML='Your data is saved on this device. Connect a free Supabase database to sync streaks, weights, measurements and checks across your phone and laptop — and never lose them.';
+    if(connectBtn) connectBtn.classList.remove('hidden');
+    if(disBtn) disBtn.classList.add('hidden');
+  }
+}
+function toggleSyncForm(){
+  const f=document.getElementById('sync-form'); if(f) f.classList.toggle('hidden');
+}
+const SUPABASE_SQL=`-- Run this once in the Supabase SQL editor.
+create table if not exists app_state (
+  id text primary key,
+  data jsonb,
+  updated_at timestamptz default now()
+);
+alter table app_state enable row level security;
+
+-- Allow anon read/write ONLY to the single app row (id = 'ceo-assistant-main').
+create policy "rw own row" on app_state
+  for all
+  using  (id = 'ceo-assistant-main')
+  with check (id = 'ceo-assistant-main');`;
+function showSqlHelp(){
+  const el=document.getElementById('sql-help'); if(!el) return;
+  el.textContent=SUPABASE_SQL;
+  el.classList.toggle('hidden');
+}
+async function connectSync(){
+  const url=(document.getElementById('sb-url').value||'').trim();
+  const key=(document.getElementById('sb-key').value||'').trim();
+  if(!/^https:\/\/.+\.supabase\.co/.test(url)){ alert('Enter a valid Supabase Project URL (https://xxxx.supabase.co)'); return; }
+  if(key.length<20){ alert('Enter your anon public key.'); return; }
+  setSbConfig(url, key);
+  window._sbClient=null;            // force re-create with new config
+  setSyncStatus('loading');
+  // Merge: keep whatever's already local, then load+merge cloud, then push.
+  await loadAppData();
+  await pushToCloud();
+  renderSyncCard();
+  // re-render everything so any cloud-loaded data appears
+  renderToday(); renderGoals(); applyFitnessPhase(); renderFitToday();
+  if(_syncState!=='error') alert('Cloud sync is on. Your data will now sync across devices.');
+}
+function disconnectSync(){
+  if(!confirm('Disconnect cloud sync on this device? Your data stays saved locally; it just stops syncing here.')) return;
+  setSbConfig(null);
+  window._sbClient=null;
+  setSyncStatus('local');
+  renderSyncCard();
 }
 
 // ─── WEIGHT TRACKER (migrated from localStorage) ───
@@ -1515,136 +2216,160 @@ async function saveWoWeights(type){
 
 // ─── STUDY TAB JS ───
 const STUDY_SCHEDULE = [
-  {date:'Jun 1',day:'Mon',topic:'C Programming: Basics, Operators, Loops',hrs:'1h',phase:'p1'},
-  {date:'Jun 2',day:'Tue',topic:'C: Pointers & Arrays',hrs:'1h',phase:'p1'},
-  {date:'Jun 3',day:'Wed',topic:'C: Structures, Unions, Functions',hrs:'1h',phase:'p1'},
-  {date:'Jun 4',day:'Thu',topic:'C: File I/O, Pre/Post Increment (trace code)',hrs:'1h',phase:'p1'},
-  {date:'Jun 5',day:'Fri',topic:'C: Bitwise Ops + 20 MCQ practice',hrs:'1h',phase:'p1'},
-  {date:'Jun 6',day:'Sat',topic:'OFF',hrs:'',phase:'off'},
-  {date:'Jun 7',day:'Sun',topic:'C Programming full revision + 30 MCQs (GeeksForGeeks)',hrs:'3h',phase:'p1'},
-  {date:'Jun 8',day:'Mon',topic:'DSA: Arrays, Stacks, Queues',hrs:'1h',phase:'p1'},
-  {date:'Jun 9',day:'Tue',topic:'DSA: Linked Lists (single, double, circular)',hrs:'1h',phase:'p1'},
-  {date:'Jun 10',day:'Wed',topic:'DSA: Trees – BST, traversals',hrs:'1h',phase:'p1'},
-  {date:'Jun 11',day:'Thu',topic:'DSA: Sorting algorithms + Big-O notation',hrs:'1h',phase:'p1'},
-  {date:'Jun 12',day:'Fri',topic:'DSA: Graphs, Hashing + practice MCQs',hrs:'1h',phase:'p1'},
-  {date:'Jun 13',day:'Sat',topic:'OFF',hrs:'',phase:'off'},
-  {date:'Jun 14',day:'Sun',topic:'DSA full drill: trace questions + GATE CS MCQs',hrs:'3h',phase:'p1'},
-  {date:'Jun 15',day:'Mon',topic:'OS: Processes, Threads, Scheduling',hrs:'1h',phase:'p1'},
-  {date:'Jun 16',day:'Tue',topic:'OS: Memory Management, Paging, Virtual Memory',hrs:'1h',phase:'p1'},
-  {date:'Jun 17',day:'Wed',topic:'OS: Deadlock, File Systems, I/O',hrs:'1h',phase:'p1'},
-  {date:'Jun 18',day:'Thu',topic:'DBMS: ER Model, Keys, Integrity constraints',hrs:'1h',phase:'p1'},
-  {date:'Jun 19',day:'Fri',topic:'DBMS: Normalization 1NF–BCNF',hrs:'1h',phase:'p1'},
-  {date:'Jun 20',day:'Sat',topic:'OFF',hrs:'',phase:'off'},
-  {date:'Jun 21',day:'Sun',topic:'OS + DBMS combined MCQ test (50 questions timed)',hrs:'3h',phase:'p1'},
-  {date:'Jun 22',day:'Mon',topic:'DBMS: SQL – SELECT, JOINs, GROUP BY',hrs:'1h',phase:'p1'},
-  {date:'Jun 23',day:'Tue',topic:'DBMS: Transactions, ACID, Concurrency',hrs:'1h',phase:'p1'},
-  {date:'Jun 24',day:'Wed',topic:'OOP: Classes, Inheritance, Polymorphism',hrs:'1h',phase:'p1'},
-  {date:'Jun 25',day:'Thu',topic:'OOP: Encapsulation, Abstract class, Interface',hrs:'1h',phase:'p1'},
-  {date:'Jun 26',day:'Fri',topic:'Phase 1 weak area revision',hrs:'1h',phase:'p1'},
-  {date:'Jun 27',day:'Sat',topic:'OFF',hrs:'',phase:'off'},
-  {date:'Jun 28',day:'Sun',topic:'Phase 1 FULL MOCK TEST (60 tech questions, 60 min)',hrs:'3h',phase:'mock'},
-  {date:'Jun 29',day:'Mon',topic:'Networks: OSI 7 layers (memorize!)',hrs:'1h',phase:'p2'},
-  {date:'Jun 30',day:'Tue',topic:'Networks: TCP/IP, IP addressing, Subnetting',hrs:'1h',phase:'p2'},
-  {date:'Jul 1',day:'Wed',topic:'Networks: MAC, ARP, DNS, DHCP, Ports',hrs:'1h',phase:'p2'},
-  {date:'Jul 2',day:'Thu',topic:'Networks: HTTP vs HTTPS, SSL/TLS, Protocols',hrs:'1h',phase:'p2'},
-  {date:'Jul 3',day:'Fri',topic:'Security: Malware types, Antivirus, VPN',hrs:'1h',phase:'p2'},
-  {date:'Jul 4',day:'Sat',topic:'OFF',hrs:'',phase:'off'},
-  {date:'Jul 5',day:'Sun',topic:'Networks full drill: 50 MCQs (port numbers, OSI focus)',hrs:'3h',phase:'p2'},
-  {date:'Jul 6',day:'Mon',topic:'Number Systems: Binary ↔ Decimal ↔ Hex ↔ Octal',hrs:'1h',phase:'p2'},
-  {date:'Jul 7',day:'Tue',topic:'Number Systems: Logic Gates (XOR, AND, OR, NOT, NAND)',hrs:'1h',phase:'p2'},
-  {date:'Jul 8',day:'Wed',topic:'Storage: SSD/HDD, RAM, Cache, Nibble/Byte hierarchy',hrs:'1h',phase:'p2'},
-  {date:'Jul 9',day:'Thu',topic:'Web Tech: HTTP, REST, Client-Server, Cookies/Sessions',hrs:'1h',phase:'p2'},
-  {date:'Jul 10',day:'Fri',topic:'Cloud/SE: SaaS/IaaS/PaaS, DLL, SDLC basics',hrs:'1h',phase:'p2'},
-  {date:'Jul 11',day:'Sat',topic:'OFF',hrs:'',phase:'off'},
-  {date:'Jul 12',day:'Sun',topic:'Networks + Number Systems MOCK (50 Qs)',hrs:'3h',phase:'p2'},
-  {date:'Jul 13',day:'Mon',topic:'MS Office: Word, Excel, PowerPoint shortcuts',hrs:'1h',phase:'p2'},
-  {date:'Jul 14',day:'Tue',topic:'Software Engineering: SDLC, Testing, UML basics',hrs:'1h',phase:'p2'},
-  {date:'Jul 15',day:'Wed',topic:'Phase 2 revision + 30 MCQ drill',hrs:'1h',phase:'p2'},
-  {date:'Jul 16',day:'Thu',topic:'Data Communication: Transmission media, Bandwidth',hrs:'1h',phase:'p2'},
-  {date:'Jul 17',day:'Fri',topic:'Phase 2 weak area review',hrs:'1h',phase:'p2'},
-  {date:'Jul 18',day:'Sat',topic:'OFF',hrs:'',phase:'off'},
-  {date:'Jul 19',day:'Sun',topic:'Phase 1+2 COMBINED MOCK (75 tech Qs, 75 min)',hrs:'3h',phase:'mock'},
-  {date:'Jul 20',day:'Mon',topic:'Reasoning: Series (number + alpha-numeric)',hrs:'1h',phase:'p3'},
-  {date:'Jul 21',day:'Tue',topic:'Reasoning: Coding-Decoding, Directions',hrs:'1h',phase:'p3'},
-  {date:'Jul 22',day:'Wed',topic:'Reasoning: Blood Relations, Seating Arrangement',hrs:'1h',phase:'p3'},
-  {date:'Jul 23',day:'Thu',topic:'Reasoning: Puzzles + City ordering',hrs:'1h',phase:'p3'},
-  {date:'Jul 24',day:'Fri',topic:'Quant: Profit/Loss, SI/CI, Ratio',hrs:'1h',phase:'p3'},
-  {date:'Jul 25',day:'Sat',topic:'OFF',hrs:'',phase:'off'},
-  {date:'Jul 26',day:'Sun',topic:'Reasoning + Quant timed drill (40 Qs in 40 min)',hrs:'3h',phase:'p3'},
-  {date:'Jul 27',day:'Mon',topic:'Quant: Mixtures, Averages, Pipes & Cisterns',hrs:'1h',phase:'p3'},
-  {date:'Jul 28',day:'Tue',topic:'Quant: Time-Work, Time-Speed-Distance',hrs:'1h',phase:'p3'},
-  {date:'Jul 29',day:'Wed',topic:'English: Idioms, One-word substitution, Vocab',hrs:'1h',phase:'p3'},
-  {date:'Jul 30',day:'Thu',topic:'English: Antonyms, Synonyms, Fill-in-blanks',hrs:'1h',phase:'p3'},
-  {date:'Jul 31',day:'Fri',topic:'English: Grammar rules + Comprehension practice',hrs:'1h',phase:'p3'},
-  {date:'Aug 1',day:'Sat',topic:'OFF',hrs:'',phase:'off'},
-  {date:'Aug 2',day:'Sun',topic:'Full aptitude + English section mock (45 Qs)',hrs:'3h',phase:'p3'},
-  {date:'Aug 3',day:'Mon',topic:'GK: Indian Constitution, Polity, Courts',hrs:'1h',phase:'p3'},
-  {date:'Aug 4',day:'Tue',topic:'GK: Science & Tech, ISRO launches, Space',hrs:'1h',phase:'p3'},
-  {date:'Aug 5',day:'Wed',topic:'GK: Awards, Sports, Govt Schemes',hrs:'1h',phase:'p3'},
-  {date:'Aug 6',day:'Thu',topic:'GK: Current Affairs (July–Aug 2026)',hrs:'1h',phase:'p3'},
-  {date:'Aug 7',day:'Fri',topic:'Phase 3 full revision + weak spot drill',hrs:'1h',phase:'p3'},
-  {date:'Aug 8',day:'Sat',topic:'OFF',hrs:'',phase:'off'},
-  {date:'Aug 9',day:'Sun',topic:'Phase 3 MOCK (40 aptitude+GK Qs, 40 min)',hrs:'3h',phase:'mock'},
-  {date:'Aug 10',day:'Mon',topic:'Revision: C + DSA flashcard drill',hrs:'1h',phase:'p4'},
-  {date:'Aug 11',day:'Tue',topic:'Revision: DBMS normalization + SQL queries',hrs:'1h',phase:'p4'},
-  {date:'Aug 12',day:'Wed',topic:'Revision: OS scheduling + memory concepts',hrs:'1h',phase:'p4'},
-  {date:'Aug 13',day:'Thu',topic:'Revision: Networks OSI + port numbers rapid fire',hrs:'1h',phase:'p4'},
-  {date:'Aug 14',day:'Fri',topic:'Revision: Number systems conversions timed practice',hrs:'1h',phase:'p4'},
-  {date:'Aug 15',day:'Sat',topic:'OFF',hrs:'',phase:'off'},
-  {date:'Aug 16',day:'Sun',topic:'FULL MOCK TEST 1 – All sections (75 Qs, 75 min). Review every wrong answer.',hrs:'3h',phase:'mock'},
-  {date:'Aug 17',day:'Mon',topic:'Error analysis: Top 10 wrong answers from Mock 1',hrs:'1h',phase:'p4'},
-  {date:'Aug 18',day:'Tue',topic:'Revision: Reasoning + Quant quick-fire 30 Qs',hrs:'1h',phase:'p4'},
-  {date:'Aug 19',day:'Wed',topic:'Revision: English vocab + idioms rapid recall',hrs:'1h',phase:'p4'},
-  {date:'Aug 20',day:'Thu',topic:'Revision: Current affairs + GK last 2 months',hrs:'1h',phase:'p4'},
-  {date:'Aug 21',day:'Fri',topic:'Revision: C code tracing + output prediction',hrs:'1h',phase:'p4'},
-  {date:'Aug 22',day:'Sat',topic:'OFF',hrs:'',phase:'off'},
-  {date:'Aug 23',day:'Sun',topic:'FULL MOCK TEST 2 – Simulate real exam. Analyse gaps.',hrs:'3h',phase:'mock'},
-  {date:'Aug 24',day:'Mon',topic:'Final revision: DSA + Networks cheat sheet',hrs:'1h',phase:'p4'},
-  {date:'Aug 25',day:'Tue',topic:'Final revision: DBMS + OS key concepts',hrs:'1h',phase:'p4'},
-  {date:'Aug 26',day:'Wed',topic:'Final revision: Aptitude formulas + shortcuts',hrs:'1h',phase:'p4'},
-  {date:'Aug 27',day:'Thu',topic:'Final revision: GK + Current Affairs',hrs:'1h',phase:'p4'},
-  {date:'Aug 28',day:'Fri',topic:'READY — Light review, relax. You are prepared.',hrs:'1h',phase:'p4'},
+  {dayNo:1,topic:"C Programming: Basics, Operators, Loops",hrs:'1h',phase:'p1'},
+  {dayNo:2,topic:"C: Pointers & Arrays",hrs:'1h',phase:'p1'},
+  {dayNo:3,topic:"C: Structures, Unions, Functions",hrs:'1h',phase:'p1'},
+  {dayNo:4,topic:"C: File I/O, Pre/Post Increment (trace code)",hrs:'1h',phase:'p1'},
+  {dayNo:5,topic:"C: Bitwise Ops + 20 MCQ practice",hrs:'1h',phase:'p1'},
+  {dayNo:6,topic:"DSA: Arrays, Stacks, Queues",hrs:'1h',phase:'p1'},
+  {dayNo:7,topic:"C Programming full revision + 30 MCQs",hrs:'2h',phase:'rev'},
+  {dayNo:8,topic:"DSA: Linked Lists (single, double, circular)",hrs:'1h',phase:'p1'},
+  {dayNo:9,topic:"DSA: Trees — BST, traversals",hrs:'1h',phase:'p1'},
+  {dayNo:10,topic:"DSA: Sorting algorithms + Big-O notation",hrs:'1h',phase:'p1'},
+  {dayNo:11,topic:"DSA: Graphs, Hashing + practice MCQs",hrs:'1h',phase:'p1'},
+  {dayNo:12,topic:"OS: Processes, Threads, CPU Scheduling",hrs:'1h',phase:'p1'},
+  {dayNo:13,topic:"OS: Memory Management, Paging, Virtual Memory",hrs:'1h',phase:'p1'},
+  {dayNo:14,topic:"DSA full drill: trace questions + GATE CS MCQs",hrs:'2h',phase:'rev'},
+  {dayNo:15,topic:"OS: Deadlock, File Systems, I/O",hrs:'1h',phase:'p1'},
+  {dayNo:16,topic:"DBMS: ER Model, Keys, Integrity constraints",hrs:'1h',phase:'p1'},
+  {dayNo:17,topic:"DBMS: Normalization 1NF–BCNF",hrs:'1h',phase:'p1'},
+  {dayNo:18,topic:"DBMS: SQL — SELECT, JOINs, GROUP BY",hrs:'1h',phase:'p1'},
+  {dayNo:19,topic:"DBMS: Transactions, ACID, Concurrency",hrs:'1h',phase:'p1'},
+  {dayNo:20,topic:"OOP: Classes, Inheritance, Polymorphism",hrs:'1h',phase:'p1'},
+  {dayNo:21,topic:"OS + DBMS combined MCQ test (50 Qs, timed)",hrs:'2h',phase:'rev'},
+  {dayNo:22,topic:"OOP: Encapsulation, Abstraction, Interfaces",hrs:'1h',phase:'p1'},
+  {dayNo:23,topic:"Phase 1 weak-area revision + 30 MCQs",hrs:'1h',phase:'p1'},
+  {dayNo:24,topic:"Networks: OSI 7 layers (memorize!)",hrs:'1h',phase:'p2'},
+  {dayNo:25,topic:"Networks: TCP/IP, IP addressing, Subnetting",hrs:'1h',phase:'p2'},
+  {dayNo:26,topic:"Networks: MAC, ARP, DNS, DHCP, Ports",hrs:'1h',phase:'p2'},
+  {dayNo:27,topic:"Networks: HTTP vs HTTPS, SSL/TLS, Protocols",hrs:'1h',phase:'p2'},
+  {dayNo:28,topic:"PHASE 1 MOCK — 60 technical Qs in 60 min. Review every wrong answer.",hrs:'2h',phase:'mock'},
+  {dayNo:29,topic:"Security: Malware types, Firewalls, VPN, Antivirus",hrs:'1h',phase:'p2'},
+  {dayNo:30,topic:"Number Systems: Binary ↔ Decimal ↔ Hex ↔ Octal",hrs:'1h',phase:'p2'},
+  {dayNo:31,topic:"Number Systems: Logic Gates (XOR, AND, OR, NAND)",hrs:'1h',phase:'p2'},
+  {dayNo:32,topic:"Storage: SSD/HDD, RAM, Cache, Byte hierarchy",hrs:'1h',phase:'p2'},
+  {dayNo:33,topic:"Web Tech: HTTP, REST, Client-Server, Cookies/Sessions",hrs:'1h',phase:'p2'},
+  {dayNo:34,topic:"Cloud/SE: SaaS/IaaS/PaaS, DLL, SDLC basics",hrs:'1h',phase:'p2'},
+  {dayNo:35,topic:"Networks + Number Systems mock (50 Qs)",hrs:'2h',phase:'rev'},
+  {dayNo:36,topic:"MS Office: Word, Excel, PowerPoint shortcuts",hrs:'1h',phase:'p2'},
+  {dayNo:37,topic:"Software Engineering: SDLC, Testing, UML",hrs:'1h',phase:'p2'},
+  {dayNo:38,topic:"Data Communication: Transmission media, Bandwidth",hrs:'1h',phase:'p2'},
+  {dayNo:39,topic:"Phase 2 weak-area revision + 30 MCQ drill",hrs:'1h',phase:'p2'},
+  {dayNo:40,topic:"Reasoning: Series (number + alpha-numeric)",hrs:'1h',phase:'p3'},
+  {dayNo:41,topic:"Reasoning: Coding-Decoding, Directions",hrs:'1h',phase:'p3'},
+  {dayNo:42,topic:"PHASE 1+2 COMBINED MOCK — 75 tech Qs in 75 min.",hrs:'2h',phase:'mock'},
+  {dayNo:43,topic:"Reasoning: Blood Relations, Seating Arrangement",hrs:'1h',phase:'p3'},
+  {dayNo:44,topic:"Reasoning: Puzzles + ordering",hrs:'1h',phase:'p3'},
+  {dayNo:45,topic:"Quant: Profit/Loss, SI/CI, Ratio",hrs:'1h',phase:'p3'},
+  {dayNo:46,topic:"Quant: Mixtures, Averages, Pipes & Cisterns",hrs:'1h',phase:'p3'},
+  {dayNo:47,topic:"Quant: Time-Work, Time-Speed-Distance",hrs:'1h',phase:'p3'},
+  {dayNo:48,topic:"English: Idioms, One-word substitution, Vocab",hrs:'1h',phase:'p3'},
+  {dayNo:49,topic:"Reasoning + Quant timed drill (40 Qs in 40 min)",hrs:'2h',phase:'rev'},
+  {dayNo:50,topic:"English: Antonyms, Synonyms, Fill-in-blanks",hrs:'1h',phase:'p3'},
+  {dayNo:51,topic:"English: Grammar rules + Comprehension",hrs:'1h',phase:'p3'},
+  {dayNo:52,topic:"GK: Indian Constitution, Polity, Courts",hrs:'1h',phase:'p3'},
+  {dayNo:53,topic:"GK: Science & Tech, ISRO launches, Space",hrs:'1h',phase:'p3'},
+  {dayNo:54,topic:"GK: Awards, Sports, Govt Schemes",hrs:'1h',phase:'p3'},
+  {dayNo:55,topic:"GK: Current Affairs (recent 2 months)",hrs:'1h',phase:'p3'},
+  {dayNo:56,topic:"Aptitude + English section mock (45 Qs)",hrs:'2h',phase:'rev'},
+  {dayNo:57,topic:"Phase 3 full revision + weak-spot drill",hrs:'1h',phase:'p3'},
+  {dayNo:58,topic:"Revision: C + DSA flashcard drill",hrs:'1h',phase:'p4'},
+  {dayNo:59,topic:"Revision: DBMS normalization + SQL queries",hrs:'1h',phase:'p4'},
+  {dayNo:60,topic:"Revision: OS scheduling + memory concepts",hrs:'1h',phase:'p4'},
+  {dayNo:61,topic:"Revision: Networks OSI + port numbers rapid-fire",hrs:'1h',phase:'p4'},
+  {dayNo:62,topic:"Revision: Number systems conversions timed",hrs:'1h',phase:'p4'},
+  {dayNo:63,topic:"PHASE 3 MOCK — 40 aptitude + GK Qs in 40 min.",hrs:'2h',phase:'mock'},
+  {dayNo:64,topic:"Error analysis: top wrong answers from last mock",hrs:'1h',phase:'p4'},
+  {dayNo:65,topic:"Revision: Reasoning + Quant quick-fire 30 Qs",hrs:'1h',phase:'p4'},
+  {dayNo:66,topic:"Revision: English vocab + idioms recall",hrs:'1h',phase:'p4'},
+  {dayNo:67,topic:"Revision: Current affairs + GK recap",hrs:'1h',phase:'p4'},
+  {dayNo:68,topic:"Revision: C code tracing + output prediction",hrs:'1h',phase:'p4'},
+  {dayNo:69,topic:"Final revision: DSA + Networks cheat sheet",hrs:'1h',phase:'p4'},
+  {dayNo:70,topic:"FULL MOCK TEST 1 — all sections (75 Qs, 75 min). Deep review.",hrs:'2h',phase:'mock'},
+  {dayNo:71,topic:"Final revision: DBMS + OS key concepts",hrs:'1h',phase:'p4'},
+  {dayNo:72,topic:"Final revision: Aptitude formulas + shortcuts",hrs:'1h',phase:'p4'},
+  {dayNo:73,topic:"Final revision: GK + Current Affairs",hrs:'1h',phase:'p4'},
+  {dayNo:74,topic:"Full syllabus rapid recap: technical section",hrs:'1h',phase:'p4'},
+  {dayNo:75,topic:"Full syllabus rapid recap: aptitude + GK",hrs:'1h',phase:'p4'},
+  {dayNo:76,topic:"Exam strategy: time allocation + negative-marking plan",hrs:'1h',phase:'p4'},
+  {dayNo:77,topic:"FULL MOCK TEST 2 — simulate real exam. Analyse gaps.",hrs:'2h',phase:'mock'},
+  {dayNo:78,topic:"Re-attempt all previously wrong MCQs",hrs:'1h',phase:'p4'},
+  {dayNo:79,topic:"Port numbers, formulas, shortcuts — memory drill",hrs:'1h',phase:'p4'},
+  {dayNo:80,topic:"Light review + confidence pass",hrs:'1h',phase:'p4'},
+  {dayNo:81,topic:"Mock-mistake reattempt — final pass",hrs:'1h',phase:'p4'},
+  {dayNo:82,topic:"Speed drill: 30 mixed MCQs against the clock",hrs:'1h',phase:'p4'},
+  {dayNo:83,topic:"READY — when the exam lands, you are prepared. Stay calm.",hrs:'1h',phase:'p4'},
+  {dayNo:84,topic:"FINAL MOCK + light review. Trust your prep.",hrs:'2h',phase:'mock'},
 ];
 
-const PHASE_COLORS = {p1:'#1D9E75',p2:'#378ADD',p3:'#EF9F27',p4:'#D85A30',mock:'#D4537E',off:'var(--dim)'};
+const PHASE_COLORS = {p1:'#1D9E75',p2:'#378ADD',p3:'#EF9F27',p4:'#D85A30',mock:'#D4537E',rev:'#7F77DD',off:'var(--dim)'};
 
-function getTodayStudyEntry(){
-  const now = new Date();
-  const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const todayStr = months[now.getMonth()] + ' ' + now.getDate();
-  return STUDY_SCHEDULE.find(s => s.date === todayStr) || null;
+// Study is keyed to the same Day-1 anchor as fitness (Day 1 = your start Monday).
+const _SMONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const _SDAYS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+// Calendar label for a given program day number (1-based), derived from the start anchor.
+function studyDateLabel(dayNo){
+  const start=getStartDate();
+  const d=new Date(start); d.setDate(start.getDate()+(dayNo-1));
+  return { date:_SMONTHS[d.getMonth()]+' '+d.getDate(), day:_SDAYS[d.getDay()] };
 }
+function getStudyEntryByDay(dayNo){
+  if(dayNo<1 || dayNo>STUDY_SCHEDULE.length) return null;
+  const e=STUDY_SCHEDULE[dayNo-1];
+  const lbl=studyDateLabel(dayNo);
+  return Object.assign({}, e, {dayNo, date:lbl.date, day:lbl.day});
+}
+function getTodayStudyEntry(){ return getStudyEntryByDay(getDayNum()); }
 
 function renderStudyToday(){
   const entry = getTodayStudyEntry();
+  // dynamic "Day 1 = <date>" header label
+  const sl=document.getElementById('study-start-label');
+  if(sl){ const s=getStartDate(); sl.textContent='Day 1 = '+_SMONTHS[s.getMonth()]+' '+s.getDate()+' '+s.getFullYear(); }
+  // progress grid (Day X of 84 / Week X of 12)
+  const pg = document.getElementById('study-progress-grid');
+  if(pg){
+    const total = STUDY_SCHEDULE.length;
+    const dayNo = entry ? entry.dayNo : 0;
+    const week = entry ? Math.ceil(entry.dayNo/7) : 0;
+    const phaseName = entry ? ({p1:'Technical Core',p2:'Networks & Systems',p3:'Aptitude & GK',p4:'Revision & Mocks',rev:'Weekly Review',mock:'Mock Test'}[entry.phase]||'—') : 'Not started';
+    pg.innerHTML=`
+      <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px 10px;"><div style="font-size:10px;color:rgba(159,225,203,0.6);margin-bottom:2px;">Progress</div><div style="font-size:16px;font-weight:500;color:#fff;">Day ${dayNo} / ${total}</div></div>
+      <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px 10px;"><div style="font-size:10px;color:rgba(159,225,203,0.6);margin-bottom:2px;">Week</div><div style="font-size:16px;font-weight:500;color:#fff;">${week} / 12</div></div>
+      <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px 10px;"><div style="font-size:10px;color:rgba(159,225,203,0.6);margin-bottom:2px;">Current phase</div><div style="font-size:14px;font-weight:500;color:#fff;">${phaseName}</div></div>
+      <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px 10px;"><div style="font-size:10px;color:rgba(159,225,203,0.6);margin-bottom:2px;">Mocks in plan</div><div style="font-size:16px;font-weight:500;color:#fff;">12</div></div>`;
+  }
   const card = document.getElementById('study-today-card');
   if(!card) return;
   if(!entry){
-    card.innerHTML=`<div class="st-today-box" style="background:rgba(255,255,255,0.04);border-color:var(--border);"><div class="st-today-date">No study scheduled today</div><div class="st-today-topic" style="font-size:14px;color:var(--muted);">This date is outside the study plan period (Jun 1 – Aug 28, 2026)</div></div>`;
-  } else if(entry.phase==='off'){
-    card.innerHTML=`<div class="st-today-box" style="background:rgba(255,255,255,0.04);border-color:var(--border);"><div class="st-today-date">${entry.date} · ${entry.day}</div><div class="st-today-topic" style="color:var(--muted);">REST DAY</div><div class="st-today-meta">No studying today. Recover. Come back stronger tomorrow.</div></div>`;
+    const dn=getDayNum();
+    const msg = dn<1 ? 'Your plan starts on Day 1 (the Monday you began).' : 'You\'ve completed all 84 days of the 12-week plan. Keep revising and drilling mocks until your exam.';
+    card.innerHTML=`<div class="st-today-box" style="background:rgba(255,255,255,0.04);border-color:var(--border);"><div class="st-today-date">No study scheduled today (Day ${dn})</div><div class="st-today-topic" style="font-size:14px;color:var(--muted);">${msg}</div></div>`;
   } else {
     const col = PHASE_COLORS[entry.phase];
     const isMock = entry.phase==='mock';
-    card.innerHTML=`<div class="st-today-box" style="border-color:${col};background:${isMock?'rgba(212,83,126,0.08)':'rgba(29,158,117,0.08)'};">
-      <div class="st-today-date" style="color:${col};">${entry.date} · ${entry.day} · ${entry.hrs}</div>
+    const isRev = entry.phase==='rev';
+    const meta = isMock
+      ? 'Mock test day — simulate exam conditions. Time yourself strictly. Do it in the Sunday evening study block (extend if needed).'
+      : isRev
+        ? 'Weekly review / mock — 2 hrs in the weekend study block. Re-do wrong answers, drill weak areas.'
+        : 'Your 1 continuous study hour: 5:00–6:00 AM. Bonus 20 min recap at night (9:30 PM).';
+    card.innerHTML=`<div class="st-today-box" style="border-color:${col};background:${isMock?'rgba(212,83,126,0.08)':isRev?'rgba(127,119,221,0.08)':'rgba(29,158,117,0.08)'};">
+      <div class="st-today-date" style="color:${col};">Day ${entry.dayNo} · ${entry.date} · ${entry.day} · ${entry.hrs}</div>
       <div class="st-today-topic">${entry.topic}</div>
-      <div class="st-today-meta">${isMock?'Mock test day — simulate exam conditions. Time yourself strictly.':'Study this during your 9:00–9:25 AM block + 7:30–8:00 PM block. Total = 1 hr today.'}</div>
+      <div class="st-today-meta">${meta}</div>
     </div>`;
   }
-  // Upcoming 5 days
-  const now2 = new Date();
-  const months2=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const todayStr2 = months2[now2.getMonth()] + ' ' + now2.getDate();
-  const idx = STUDY_SCHEDULE.findIndex(s=>s.date===todayStr2);
-  const upcoming = STUDY_SCHEDULE.slice(idx+1, idx+6);
+  // Upcoming 5 days (relative to the Day-1 anchor)
+  const dn = getDayNum();
+  const upcoming = [];
+  for(let k=1;k<=5;k++){ const e=getStudyEntryByDay(dn+k); if(e) upcoming.push(e); }
   const wl = document.getElementById('study-week-list');
   if(!wl) return;
   if(!upcoming.length){ wl.innerHTML='<div style="font-size:12px;color:var(--muted);">No more sessions scheduled.</div>'; return; }
   wl.innerHTML = upcoming.map(s=>{
     const col = PHASE_COLORS[s.phase]||'var(--dim)';
-    const dotCls = 'ph-dot-'+(s.phase==='off'?'off':s.phase);
-    return `<div class="st-week-item"><div class="${dotCls}"></div><div class="st-week-date">${s.date} ${s.day}</div><div class="st-week-topic" style="${s.phase==='off'?'color:var(--dim);':''}">${s.phase==='off'?'REST':s.topic}</div><div class="st-week-hrs" style="color:${col};">${s.hrs}</div></div>`;
+    return `<div class="st-week-item"><div style="width:6px;height:6px;border-radius:50%;background:${col};flex-shrink:0;margin-top:5px;"></div><div class="st-week-date">${s.date} ${s.day}</div><div class="st-week-topic">${s.topic}</div><div class="st-week-hrs" style="color:${col};">${s.hrs}</div></div>`;
   }).join('');
 }
 
@@ -1662,12 +2387,26 @@ function rotQ(){document.getElementById('qbar').textContent='"'+Q[qi%Q.length]+'
 
 // ─── INIT ───
 async function init(){
-  await loadAppData();
+  // paint immediately from the local cache so the UI never waits on the network
+  try{ const d=localStorage.getItem('ceo_data'); if(d) appData=JSON.parse(d)||{}; }catch(e){}
+  getStartDate();          // anchor Day 1 on first launch
   updateModeUI();
+  updateNotifUI();
+  renderSyncCard();
+  applyFitnessPhase();     // set Fitness tab to current phase
   renderToday();
   renderGymBadge();
+  renderFitToday();
+  renderGoals();
   rotQ(); setInterval(rotQ,8000);
   tick(); setInterval(tick,1000);
+  // then pull the cloud copy (if configured) and re-render with merged data
+  await loadAppData();
+  renderSyncCard();
+  applyFitnessPhase();
+  renderToday();
+  renderFitToday();
+  renderGoals();
 }
 init();
 </script>
